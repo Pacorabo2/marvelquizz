@@ -109,3 +109,20 @@ header {
 }
 /* END HEADER */
 
+/* MAIN */
+main {
+  flex-grow: 1;
+}
+/* END MAIN */
+
+/* WELCOME PAGE */
+.welcomePage {
+  background-color: var(--red-color);
+  background-image: url(images/wolverine.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+

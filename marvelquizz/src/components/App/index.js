@@ -1,5 +1,6 @@
 import Header from '../Header';
 import Landing from '../Landing';
+import Footer from '../Footer';
 import '../../App.css';
 
 
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Header/>
       <Landing/>
+      <Footer/>
     </div>
   );
 }

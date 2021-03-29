@@ -1,4 +1,5 @@
-import Header from '../Header'
+import Header from '../Header';
+import Landing from '../Landing';
 import '../../App.css';
 
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <div>
       <Header/>
+      <Landing/>
     </div>
   );
 }

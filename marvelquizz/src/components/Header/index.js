@@ -1,10 +1,11 @@
 import React from 'react';
+import Marvel from '../../images/Marvel_quiz.png'
 
 const Header = () => {
   return (
     <header>
       <div className="banner-container">
-        <h1><a href="/">Marvel Quizz</a></h1>
+        <a href="/"><img src={Marvel} alt=""/></a>
       </div>
     </header>
   )

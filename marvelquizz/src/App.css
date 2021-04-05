@@ -111,8 +111,10 @@ header {
 }
 
 .banner-container {
-  text-align: center;
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
   flex-basis: 80%;
 }
 /* END HEADER */

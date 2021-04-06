@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import Welcome from '../Welcome';
 import Login from '../Login';
 import SignUp from '../SignUp';
+import ErrorPage from '../ErrorPage';
 import '../../App.css';
 
 
@@ -16,6 +17,7 @@ function App() {
       <Login/>
       <Landing/>
       <SignUp/>
+      <ErrorPage/>
 
       <Footer/>
     </div>

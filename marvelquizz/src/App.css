@@ -137,6 +137,10 @@ main {
   height: 500px;
 }
 
+.leftClaws {
+  background-image: url(images/wolverine-left-claw.png);
+}
+
 .leftBox {
   display: flex;
   flex: 0 1 35%;

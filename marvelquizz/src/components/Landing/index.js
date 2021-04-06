@@ -10,14 +10,15 @@ const Landing = () => {
 
   useEffect(() => {
     // Add ClassName to show left claws
-    refWolverine.current.classList.add('leftClaws');
+    refWolverine.current.classList.add('startingImg');
     setTimeout(() => {
       // remove className tohide left claws
-      refWolverine.current.classList.remove('leftClaws')
+      refWolverine.current.classList.remove('startingImg')
       setBtn(true)
     }, 3000)
   }, [])
 
+  // Conditional rendering of buttons
   const displayBtn = btn && (
     <Fragment>
        <div className="leftBox">

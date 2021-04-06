@@ -137,6 +137,10 @@ main {
   height: 500px;
 }
 
+.startingImg {
+  background-image: url(images/wolverine.png);
+}
+
 .leftClaws {
   background-image: url(images/wolverine-left-claw.png);
 }

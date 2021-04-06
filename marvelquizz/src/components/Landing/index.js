@@ -5,8 +5,7 @@ const Landing = () => {
   const refWolverine = useRef(false);
 
   const [btn, setBtn] = useState(null);
-
-  console.log(btn);
+  
 
   useEffect(() => {
     // Add ClassName to show  claws

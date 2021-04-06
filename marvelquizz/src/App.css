@@ -200,6 +200,24 @@ background-image: url(images/wolverine-right-claw.png);
 }
 /* END ERROR PAGE */
 
+/* SIGNUP - LOGIN - FORGETPASSWORD */
+.signUpLoginBox {
+  background-image: url(images/bg-noise-texture.png);
+  background-repeat: repeat;
+  -webkit-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
+  display: flex;
+  justify-content: center;
+}
+
+.slContainer {
+  flex: 0 1 80%;
+  display: flex;
+}
+
+/* END SIGNUP - LOGIN - FORGETPASSWORD */
+
 /* FOOTER */
 footer {
   display: flex;

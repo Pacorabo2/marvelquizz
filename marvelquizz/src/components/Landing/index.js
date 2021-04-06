@@ -9,13 +9,13 @@ const Landing = () => {
   console.log(btn);
 
   useEffect(() => {
-    // Add ClassName to show left claws
+    // Add ClassName to show  claws
     refWolverine.current.classList.add('startingImg');
     setTimeout(() => {
-      // remove className tohide left claws
+      // remove className tohide  claws
       refWolverine.current.classList.remove('startingImg')
       setBtn(true)
-    }, 3000)
+    }, 1000)
   }, [])
 
   // Conditional rendering of buttons

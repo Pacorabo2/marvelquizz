@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
 
   const refWolverine = useRef(false);
 
   const [btn, setBtn] = useState(null);
-  
+
 
   useEffect(() => {
     // Add ClassName to show  claws
@@ -40,10 +41,10 @@ const Landing = () => {
   const displayBtn = btn && (
     <Fragment>
        <div className="leftBox" onMouseOver={setLeftImg} onMouseOut={clearImg}>
-        <button className="btn-welcome">Inscription</button>
+        <Link className="btn-welcome" to="/signup" >Inscription</Link>
       </div>
       <div className="rightBox" onMouseOver={setRighttImg} onMouseOut={clearImg}>
-        <button className="btn-welcome">Connexion</button>
+        <Link className="btn-welcome" to="/login">Connexion</Link>
       </div>
     </Fragment>
   )

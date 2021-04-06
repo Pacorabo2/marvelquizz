@@ -129,7 +129,7 @@ main {
 .welcomePage {
   background-color: var(--red-color);
   background-blend-mode: multiply;
-  background-image: url(images/wolverine.png);
+  background-image: url(images/wolverine-no-claws.png);
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;

@@ -142,8 +142,12 @@ main {
 }
 
 .leftClaws {
-  background-image: url(images/wolverine-left-claw.png);
+background-image: url(images/wolverine-left-claw.png);
 }
+
+.rightClaws {
+background-image: url(images/wolverine-right-claw.png);
+}  
 
 .leftBox {
   display: flex;

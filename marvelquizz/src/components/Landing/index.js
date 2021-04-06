@@ -18,13 +18,23 @@ const Landing = () => {
     }, 1000)
   }, [])
 
+  const setLeftImg = () => {
+    console.log('salut');
+    refWolverine.current.classList.add('leftClaws')
+  }
+
+  const setRighttImg = () => {
+    console.log('ça va');
+    refWolverine.current.classList.add('rightClaws')
+  }
+
   // Conditional rendering of buttons
   const displayBtn = btn && (
     <Fragment>
-       <div className="leftBox">
+       <div className="leftBox" onMouseOver={setLeftImg}>
         <button className="btn-welcome">Inscription</button>
       </div>
-      <div className="rightBox">
+      <div className="rightBox" onMouseOver={setRighttImg}>
         <button className="btn-welcome">Connexion</button>
       </div>
     </Fragment>

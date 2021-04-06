@@ -18,23 +18,32 @@ const Landing = () => {
     }, 1000)
   }, [])
 
+  // Show left claws on MouseOver left Div
   const setLeftImg = () => {
-    console.log('salut');
     refWolverine.current.classList.add('leftClaws')
   }
 
+  // Show left claws on MouseOver left Div
   const setRighttImg = () => {
-    console.log('ça va');
     refWolverine.current.classList.add('rightClaws')
+  }
+
+  // Clear claws onMouseOut
+  const clearImg = () => {
+    if(refWolverine.current.classList.contains('leftClaws')) {
+      refWolverine.current.classList.remove('leftClaws')
+    } else {
+      refWolverine.current.classList.remove('rightClaws')
+    }
   }
 
   // Conditional rendering of buttons
   const displayBtn = btn && (
     <Fragment>
-       <div className="leftBox" onMouseOver={setLeftImg}>
+       <div className="leftBox" onMouseOver={setLeftImg} onMouseOut={clearImg}>
         <button className="btn-welcome">Inscription</button>
       </div>
-      <div className="rightBox" onMouseOver={setRighttImg}>
+      <div className="rightBox" onMouseOver={setRighttImg} onMouseOut={clearImg}>
         <button className="btn-welcome">Connexion</button>
       </div>
     </Fragment>

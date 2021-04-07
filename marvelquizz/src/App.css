@@ -114,7 +114,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
   flex-basis: 80%;
 }
 /* END HEADER */

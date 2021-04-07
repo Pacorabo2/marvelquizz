@@ -1,19 +1,34 @@
-import app from 'firebase/app'
+import app from 'firebase/app';
+import 'firebase/auth';
 
 // Your web app's Firebase configuration
 const config = {
-  apiKey: "AIzaSyCt-BPsASS_NmaL--s380dPZuQsjFa7Q2o",
-  authDomain: "marvel-quizz-ff016.firebaseapp.com",
-  projectId: "marvel-quizz-ff016",
-  storageBucket: "marvel-quizz-ff016.appspot.com",
-  messagingSenderId: "302374972654",
-  appId: "1:302374972654:web:6a9cdb496f15eda9f497ff"
+  apiKey: "AIzaSyCu8ruSCU3--S2Q3YBicCdFInaRhOgwH3I",
+  authDomain: "marvel-quizz-app-d0b0b.firebaseapp.com",
+  projectId: "marvel-quizz-app-d0b0b",
+  storageBucket: "marvel-quizz-app-d0b0b.appspot.com",
+  messagingSenderId: "579445073275",
+  appId: "1:579445073275:web:675459dd23d58fda7889de"
 };
 
 class Firebase {
   constructor() {
-    app.initializeApp(config)
+    app.initializeApp(config);
+    this.auth = app.auth();
   }
+
+  // Inscription
+  signupUser = (email, password) => {
+    this.auth.createUserWithEmailAndPassword(email, password)
+  }
+
+  // Connexion
+  loginUser = (email, password) => {
+    this.auth.signInWithEmailAndPassword(email, password)
+  }
+
+  // Deconnexion
+  signoutUser = () => this.auth.signOut()
 }
 
 export  default Firebase;

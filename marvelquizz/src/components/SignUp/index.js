@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SignUp = () => {
+
+  const data = {
+    pseudo: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  }
+
+  const [loginData, setLoginData] = useState(data)
+
+  console.log(loginData);
+
   return (
     <div className="signUpLoginBox">
       <div className="slContainer">
@@ -9,7 +21,7 @@ const SignUp = () => {
         </div>
         <div className="formBoxRight">
           <div className="formContent">
-            
+
             <h2>Inscription</h2>
 
             <form action="">

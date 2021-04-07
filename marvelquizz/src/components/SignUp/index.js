@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const SignUp = () => {
 
+  // State initialisation
   const data = {
     pseudo: '',
     email: '',
@@ -9,18 +10,20 @@ const SignUp = () => {
     confirmPassword: ''
   }
 
+  // State declaration
   const [loginData, setLoginData] = useState(data)
 
-  console.log(loginData);
-
+  // Get input value on state
   const handleChange = e => {
     setLoginData({...loginData, [e.target.id]: e.target.value})
-    // console.log(e.target.id);
   }
 
- 
+  // Destructuring loginData
+  const { pseudo, email, password, confirmPassword } = loginData
 
-  const { pseudo, email, password, confirmPassword } = loginData;
+  // Conditional rendering of btn 
+  const btn = pseudo !== '' || email !== '' || password !== '' || password !== confirmPassword 
+  ? <button disabled>Inscription</button> : <button >Inscription</button> 
 
   return (
     <div className="signUpLoginBox">
@@ -54,6 +57,8 @@ const SignUp = () => {
                 <input onChange={handleChange} value={confirmPassword} pe="password" id="confirmPassword" autoComplete="off" required/>
                 <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
               </div>
+
+              {btn}
             </form>
           </div>
         </div>

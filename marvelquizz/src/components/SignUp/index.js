@@ -13,6 +13,12 @@ const SignUp = () => {
 
   console.log(loginData);
 
+  const handleChange = e => {
+
+  }
+
+  const { pseudo, email, password, confirmPassword } = loginData;
+
   return (
     <div className="signUpLoginBox">
       <div className="slContainer">
@@ -27,22 +33,22 @@ const SignUp = () => {
             <form action="">
             
               <div className="inputBox">
-                <input type="text" id="pseudo" autoComplete="off" required/>
+                <input onchange={handleChange} value={pseudo} type="text" id="pseudo" autoComplete="off" required/>
                 <label htmlFor="pseudo">Pseudo</label>
               </div>
 
               <div className="inputBox">
-                <input type="email" id="email" autoComplete="off" required/>
+                <input onchange={handleChange} value={email} type="email" id="email" autoComplete="off" required/>
                 <label htmlFor="email">Email</label>
               </div>
 
               <div className="inputBox">
-                <input type="password" id="password" autoComplete="off" required/>
+                <input onchange={handleChange} value={password} type="password" id="password" autoComplete="off" required/>
                 <label htmlFor="password">Mot de passe</label>
               </div>
 
               <div className="inputBox">
-                <input type="password" id="confirmPassword" autoComplete="off" required/>
+                <input onchange={handleChange} value={confirmPassword} pe="password" id="confirmPassword" autoComplete="off" required/>
                 <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
               </div>
             </form>

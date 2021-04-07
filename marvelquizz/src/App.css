@@ -206,7 +206,7 @@ background-image: url(images/wolverine-right-claw.png);
 
 /* SIGNUP - LOGIN - FORGETPASSWORD */
 .signUpLoginBox {
-  background-image: url(images/bg-noise-texture.png);
+  background-image: url(images/Fond_matiere_BODY.png);
   background-repeat: repeat;
   -webkit-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
@@ -218,6 +218,86 @@ background-image: url(images/wolverine-right-claw.png);
 .slContainer {
   flex: 0 1 80%;
   display: flex;
+}
+
+.formBoxLeftSignup {
+  min-height: 500px;
+  background-image: url(images/ironmanshot.png);
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  flex: 0 1 50%;
+}
+
+.formBoxRight {
+  flex: 0 1 50%;
+}
+
+.formBoxRight span {
+  display: block;
+  color: var(--red-color);
+  text-align: center;
+  border: 1px solid var(--red-color);
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.formContent {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.formContent h2 {
+  margin: 0 0 40px 0;
+  padding: 0;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+.formContent .inputBox {
+  position: relative;
+  height: 80px;
+}
+
+/* .formContent form{
+  background-image: url(images/2757455.jpg);
+} */
+
+.formContent .inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 17px;
+  color: var(--red-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid var(--white-color);
+  outline: none;
+}
+
+.formContent .inputBox label {
+  color: var(--white-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 17px;
+  pointer-events: none;
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.formContent .inputBox input:focus~label,
+.formContent .inputBox input:valid~label {
+  top: -30px;
+  left: 0;
+  color: var(--white-color);
+  font-size: 16px;
+  font-style: italic;
 }
 
 /* END SIGNUP - LOGIN - FORGETPASSWORD */

@@ -7,6 +7,8 @@ const SignUp = () => {
   // get context of Firebase context
   const firebase = useContext(FirebaseContext)
 
+  console.log(firebase);
+
   // State initialisation
   const data = {
     pseudo: '',
@@ -18,9 +20,34 @@ const SignUp = () => {
   // State declaration
   const [loginData, setLoginData] = useState(data)
 
+  // State Error declaration
+  const [error, setError] = useState('')
+
   // Get input value on state
   const handleChange = e => {
     setLoginData({...loginData, [e.target.id]: e.target.value})
+  }
+
+
+  // Get informations of form
+  const handleSubmit = e => {
+    e.preventDefault();
+  
+    // Destructuring state object
+    const { email, password } = loginData
+  
+    // send email and password to signupUser method on firebase
+    firebase.signupUser(email, password)
+    // console.log(firebase.signupUser);
+    .then(user => {
+      // Emptying values on form
+      setLoginData({...data})
+    })
+    .catch(error => {
+      setError(error)
+      // Emptying values on form
+      setLoginData({...data})
+    })
   }
 
   // Destructuring loginData
@@ -29,6 +56,9 @@ const SignUp = () => {
   // Conditional rendering of btn 
   const btn = pseudo === '' || email === '' || password === '' || password !== confirmPassword 
   ? <button disabled>Inscription</button> : <button >Inscription</button> 
+
+  // Errors handle
+  const errorMsg = error !== '' && <span>{error.message}</span>
 
   return (
     <div className="signUpLoginBox">
@@ -39,9 +69,11 @@ const SignUp = () => {
         <div className="formBoxRight">
           <div className="formContent">
 
+          {errorMsg}
+
             <h2>Inscription</h2>
 
-            <form action="">
+            <form onSubmit={handleSubmit}>
             
               <div className="inputBox">
                 <input onChange={handleChange} value={pseudo} type="text" id="pseudo" autoComplete="off" required/>

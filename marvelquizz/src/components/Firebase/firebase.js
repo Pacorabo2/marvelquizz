@@ -3,12 +3,12 @@ import 'firebase/auth';
 
 // Your web app's Firebase configuration
 const config = {
-  apiKey: "AIzaSyCu8ruSCU3--S2Q3YBicCdFInaRhOgwH3I",
-  authDomain: "marvel-quizz-app-d0b0b.firebaseapp.com",
-  projectId: "marvel-quizz-app-d0b0b",
-  storageBucket: "marvel-quizz-app-d0b0b.appspot.com",
-  messagingSenderId: "579445073275",
-  appId: "1:579445073275:web:675459dd23d58fda7889de"
+  apiKey: "AIzaSyDjVYuTOjfoCkwa_N7_-kQz3gz9gQs_tvU",
+  authDomain: "marvel-quizz-app.firebaseapp.com",
+  projectId: "marvel-quizz-app",
+  storageBucket: "marvel-quizz-app.appspot.com",
+  messagingSenderId: "633894645223",
+  appId: "1:633894645223:web:510c662bea52fc37db6142"
 };
 
 class Firebase {

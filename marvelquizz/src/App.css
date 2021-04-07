@@ -89,7 +89,7 @@ h3 {
 body {
   margin: 0;
   padding: 0;
-  background-image: url(./images/bg-noise-texture.png);
+  background-image: url(./images/1866719.jpg);
   background-repeat: repeat;
   height: 100vh;
   display: flex;
@@ -185,7 +185,7 @@ background-image: url(images/wolverine-right-claw.png);
 .quiz-bg {
   margin: 0;
   padding: 0;
-  background-color: var(--dark-grey-color);
+  /* background-color: var(--dark-grey-color); */
   display: flex;
   justify-content: center;
 }

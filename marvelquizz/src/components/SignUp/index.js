@@ -22,7 +22,7 @@ const SignUp = () => {
   const { pseudo, email, password, confirmPassword } = loginData
 
   // Conditional rendering of btn 
-  const btn = pseudo !== '' || email !== '' || password !== '' || password !== confirmPassword 
+  const btn = pseudo === '' || email === '' || password === '' || password !== confirmPassword 
   ? <button disabled>Inscription</button> : <button >Inscription</button> 
 
   return (

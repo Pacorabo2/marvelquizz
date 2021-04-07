@@ -1,6 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+// Import context
+import { FirebaseContext } from '../Firebase'
 
 const SignUp = () => {
+
+  // get context of Firebase context
+  const firebase = useContext(FirebaseContext)
 
   // State initialisation
   const data = {

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
+// Import context
+import { FirebaseContext } from '../Firebase'
 
-const Login = () => {
+const Login = (props) => {
 
   // Email state initialisation
   const [email, setEmail] = useState('')
@@ -12,6 +14,12 @@ const Login = () => {
   // Button state initialisation
   const [btn, setBtn] = useState(false)
 
+  // Error state initialisation
+  const [error, setError] = useState('')
+
+  // get context of Firebase context
+  const firebase = useContext(FirebaseContext)
+
   // conditionnal rendering btn
   useEffect(() => {
     if (password.length > 5 && email !== '') {
@@ -20,6 +28,25 @@ const Login = () => {
       setBtn(false)
     }
   }, [email, password, btn])
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    // Send data 
+    firebase.loginUser(email, password)
+    .then(user => {
+      // Emptying inputvalues
+      setEmail('')
+      setPassword('')
+      // Redirecting on Welcome page
+      props.history.push('/welcome')
+    })
+    .catch(error => {
+      setError(error)
+      // Emptying inputvalues
+      setEmail('')
+      setPassword('')
+  })
+}
 
 
   return (
@@ -31,9 +58,11 @@ const Login = () => {
         <div className="formBoxRight">
           <div className="formContent">
 
+            {error !== '' && <span>{error.message}</span>}
+
             <h2>Connexion</h2>
 
-            <form >
+            <form onSubmit={handleSubmit}>
               <div className="inputBox">
                 <input onChange={e => setEmail(e.target.value)} value={email} type="email" autoComplete="off" required/>
                 <label htmlFor="email">Email</label>

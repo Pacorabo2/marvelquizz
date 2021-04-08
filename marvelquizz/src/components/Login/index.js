@@ -19,7 +19,7 @@ const Login = () => {
     } else if (btn) {
       setBtn(false)
     }
-  }, [email, password])
+  }, [email, password, btn])
 
 
   return (

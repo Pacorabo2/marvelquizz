@@ -10,11 +10,9 @@ const Logout = () => {
   // Initialise state checked
   const [checked, setChecked] = useState(false)
 
-  console.log(checked);
 
   useEffect(() => {
     if (checked) {
-      console.log("Déconnexion");
       // Disconect user with signoutUser of firebase
       firebase.signoutUser()
     }

@@ -9,6 +9,8 @@ const ForgetPassword = () => {
     console.log('salut');
   }
 
+  const disabled = email === ''
+
   return (
     <div className="signUpLoginBox">
       <div className="slContainer">
@@ -18,7 +20,7 @@ const ForgetPassword = () => {
         <div className="formBoxRight">
           <div className="formContent">
 
-            <h2>Mot de passe oublié</h2>
+            <h2>Mot de passe oublié ?</h2>
 
             <form onSubmit={handleSubmit}>
               <div className="inputBox">
@@ -30,6 +32,8 @@ const ForgetPassword = () => {
             <div className="linkContainer">
               <Link className="simpleLink" to="/login">Déjà inscrit ? Connectez-vous</Link>
             </div>
+
+            <button disabled={disabled}>Récupérer</button>
           </div>
         </div>
       </div>

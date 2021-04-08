@@ -253,7 +253,16 @@ background-image: url(images/wolverine-right-claw.png);
   flex: 0 1 50%;
 }
 
+.formBoxLeftForget {
+  min-height: 500px;
+  background-image: url(images/deadpoolforget.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex: 0 1 50%;
+}
+
 .formBoxRight {
+  display: flex;
   flex: 0 1 50%;
 }
 
@@ -261,6 +270,7 @@ background-image: url(images/wolverine-right-claw.png);
   display: block;
   color: var(--red-color);
   text-align: center;
+  
   border: 1px solid var(--red-color);
   padding: 10px;
   margin: 15px 0;

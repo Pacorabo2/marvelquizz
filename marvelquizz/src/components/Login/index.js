@@ -5,10 +5,10 @@ const Login = () => {
   return (
     <div className="signUpLoginBox">
       <div className="slContainer">
-        <div className="loginBoxLeftSignup">
+        <div className="formBoxLeftLogin">
 
         </div>
-        <div className="loginBoxRight">
+        <div className="formBoxRight">
           <div className="formContent">
 
             <h2>Connexion</h2>

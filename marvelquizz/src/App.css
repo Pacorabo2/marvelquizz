@@ -228,6 +228,14 @@ background-image: url(images/wolverine-right-claw.png);
   flex: 0 1 50%;
 }
 
+.formBoxLeftLogin {
+  min-height: 500px;
+  background-image: url(images/daredevil.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex: 0 1 50%;
+}
+
 .formBoxRight {
   flex: 0 1 50%;
 }

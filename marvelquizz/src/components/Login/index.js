@@ -3,17 +3,12 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
 
+  // Email state initialisation
   const [email, setEmail] = useState('')
 
+  // Password state initialisation
   const [password, setPassword] = useState('')
 
-  const handleEmail = e => {
-    
-  }
-
-  const handlePassword = e => {
-
-  }
 
   return (
     <div className="signUpLoginBox">
@@ -28,12 +23,12 @@ const Login = () => {
 
             <form >
               <div className="inputBox">
-                <input onChange={handleEmail} value={email} type="email" id="email" autoComplete="off" required/>
+                <input onChange={e => setEmail(e.target.value)} value={email} type="email" autoComplete="off" required/>
                 <label htmlFor="email">Email</label>
               </div>
 
               <div className="inputBox">
-                <input onChange={handlePassword} value={password} type="password" id="password" autoComplete="off" required/>
+                <input onChange={e => setPassword(e.target.value)} value={password} type="password" autoComplete="off" required/>
                 <label htmlFor="password">Mot de passe</label>
               </div>
             </form>

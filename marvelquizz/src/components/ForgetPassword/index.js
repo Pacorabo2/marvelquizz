@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { FirebaseContext } from '../Firebase'
 
 const ForgetPassword = () => {
 
   const [email, setEmail] = useState('')
 
+  const firebase = useContext(FirebaseContext)
+
+
   const handleSubmit = e => {
-    console.log('salut');
+    e.preventDefault()
+    firebase.
   }
 
   const disabled = email === ''

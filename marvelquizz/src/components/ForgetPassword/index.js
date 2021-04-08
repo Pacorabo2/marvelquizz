@@ -2,16 +2,37 @@ import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { FirebaseContext } from '../Firebase'
 
-const ForgetPassword = () => {
+const ForgetPassword = props => {
 
+  // Define email state
   const [email, setEmail] = useState('')
 
+  // Define context to firebase
   const firebase = useContext(FirebaseContext)
+
+  // Define seuccess state
+  const [success, setSuccess] = useState(null)
+
+  // Define error state
+  const [error, setError] = useState(null)
 
 
   const handleSubmit = e => {
     e.preventDefault()
-    firebase.
+    firebase.passwordReset(email)
+    .then(()=> {
+      setError(null)
+      setSuccess(`Veuillez consulter votre adresse mail ${email} pour renouveler votre mot de passe`)
+      setEmail('')
+
+      setTimeout(() => {
+        props.history.push('/login')
+      }, 5000)
+    })
+    .catch(error=> {
+      setError(error)
+      setEmail('')
+    })
   }
 
   const disabled = email === ''
@@ -25,6 +46,20 @@ const ForgetPassword = () => {
         <div className="formBoxRight">
           <div className="formContent">
 
+            { 
+              success && <span 
+                style={{
+                border: "1px solid green",
+                background: "green",
+                color: "#ffffff"
+            }}
+            >
+              {success}
+            </span>
+            }
+
+            {error && <span>{error.message}</span>}
+
             <h2>Mot de passe oublié ?</h2>
 
             <form onSubmit={handleSubmit}>
@@ -33,12 +68,11 @@ const ForgetPassword = () => {
                 <label htmlFor="email">Email</label>
               </div>
 
+              <button disabled={disabled}>Récupérer</button>
             </form>
             <div className="linkContainer">
               <Link className="simpleLink" to="/login">Déjà inscrit ? Connectez-vous</Link>
             </div>
-
-            <button disabled={disabled}>Récupérer</button>
           </div>
         </div>
       </div>

@@ -1,18 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { FirebaseContext } from '../Firebase'
+
 
 const Logout = () => {
+
+  // Setting context
+  const firebase = useContext(FirebaseContext)
 
   // Initialise state checked
   const [checked, setChecked] = useState(false)
 
+  console.log(checked);
+
   useEffect(() => {
     if (checked) {
       console.log("Déconnexion");
+      // Disconect user with signoutUser of firebase
+      firebase.signoutUser()
     }
-  }, [checked])
+  }, [checked, firebase])
 
   const handlechange = event => {
-    console.log(event);
+    setChecked(event.target.checked);
   }
 
   return (

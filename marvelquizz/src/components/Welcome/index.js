@@ -1,5 +1,6 @@
 import React from 'react'
 import Logout from '../Logout'
+import Quiz from '../Quiz'
 
 const Welcome = () => {
   return (
@@ -7,6 +8,7 @@ const Welcome = () => {
       <div className="container">
         Welcome
         <Logout/>
+        <Quiz/>
       </div>
     </div>
   )

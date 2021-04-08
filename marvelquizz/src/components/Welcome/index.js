@@ -6,7 +6,6 @@ const Welcome = () => {
   return (
     <div className="quiz-bg">
       <div className="container">
-        Welcome
         <Logout/>
         <Quiz/>
       </div>

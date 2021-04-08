@@ -34,6 +34,7 @@ const Login = (props) => {
     // Send data 
     firebase.loginUser(email, password)
     .then(user => {
+      console.log(user);
       // Emptying inputvalues
       setEmail('')
       setPassword('')

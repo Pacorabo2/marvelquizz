@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ForgetPassword = () => {
+
+  const [email, setEmail] = useState('')
 
   const handleSubmit = e => {
     console.log('salut');

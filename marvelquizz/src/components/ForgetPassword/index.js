@@ -27,7 +27,7 @@ const ForgetPassword = props => {
 
       setTimeout(() => {
         props.history.push('/login')
-      }, 5000)
+      }, 2000)
     })
     .catch(error=> {
       setError(error)

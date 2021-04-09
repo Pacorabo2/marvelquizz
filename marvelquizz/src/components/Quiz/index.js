@@ -10,10 +10,12 @@ class Quiz extends Component {
     quizLevel: [0]
   }
 
-  loadQuestions = level => {
-    console.log(level);
+  // Tot get the array of 'debutant' questions
+  loadQuestions = quizz => {
+    const fetchedArrayQuiz = QuizMarvel[0].quizz[quizz]
   }
 
+  // To
   componentDidMount() {
     this.loadQuestions(this.state.levelNames[this.state.quizLevel])
   }

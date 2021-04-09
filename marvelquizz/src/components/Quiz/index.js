@@ -12,6 +12,12 @@ class Quiz extends Component {
         <div>
           <Levels/>
           <ProgressBar/>
+          <h2>Notre question Quiz</h2>
+          <p className="answerOtions">Question 1</p>
+          <p className="answerOtions">Question 2</p>
+          <p className="answerOtions">Question 3</p>
+          <p className="answerOtions">Question 4</p>
+          <button className="btnSubmit">Suivant</button>
         </div>
       )
     }

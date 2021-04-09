@@ -9,7 +9,10 @@ class Quiz extends Component {
     levelNames: ["debutant", "confirme", "expert"],
     quizLevel: [0],
     maxQuestions: 10,
-    storedQuestions: []
+    storedQuestions: [],
+    question: null,
+    options: [],
+    idQuestion: 0
   }
 
   // Tot get the array of 'debutant' questions
@@ -30,6 +33,16 @@ class Quiz extends Component {
   // To
   componentDidMount() {
     this.loadQuestions(this.state.levelNames[this.state.quizLevel])
+  }
+
+  // To push questions and options in State
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.storedQuestions !== prevState.storedQuestions) {
+        this.setState({
+          question: this.state.storedQuestions[this.state.idQuestion].question,
+          option: this.state.storedQuestions[this.state.idQuestion].options
+        })
+    }
   }
   
 

@@ -11,11 +11,27 @@ const Welcome = props => {
   // Firebase context
   const firebase = useContext(FirebaseContext)
 
+  const [userData, setUserData] = useState({})
+
   useEffect(() => {
     // To listen if there is a autenticated user
     let listener = firebase.auth.onAuthStateChanged(user => {
       // if not, redirect on '/'
       user ? setUserSession(user) : props.history.push('/')
+    })
+    // Get id from user in firebase
+    firebase.user(userSession.uid)
+    .get()
+    // If success push data user in state object
+    .then(doc => {
+      if (doc && doc.exists) {
+        const myData = doc.data()
+        setUserData(myData)
+      }
+    })
+    // If error clg error
+    .catch(error => {
+      console.log(error);
     })
     return () => {
       // To cleanUp. stop the listener
@@ -32,7 +48,7 @@ const Welcome = props => {
     <div className="quiz-bg">
       <div className="container">
         <Logout/>
-        <Quiz/>
+        <Quiz userData={userData}/>
       </div>
     </div>
   )

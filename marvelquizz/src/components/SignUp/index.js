@@ -34,12 +34,19 @@ const SignUp = (props) => {
     e.preventDefault();
   
     // Destructuring state object
-    const { email, password } = loginData
+    const { email, password, pseudo } = loginData
   
     // send email and password to signupUser method on firebase
     firebase.signupUser(email, password)
-    // console.log(firebase.signupUser);
-    .then(user => {
+    // insert a user in firestore db
+    .then(authUser=> {
+      return firebase.user(authUser.user.uid).set({
+        pseudo: pseudo,
+        email: email,
+      })
+    })
+    // then do this thinks in case of success
+    .then(() => {
       // Emptying values on form
       setLoginData({...data})
       // Redirect on Welcome page

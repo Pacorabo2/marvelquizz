@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Quiz = () => {
+const Quiz = (props) => {
+  console.log(props);
   return (
     <div>
-      Quiz
+      {/* <h2>Pseudo: {props.userdata}</h2> */}
     </div>
   )
 }

@@ -19,20 +19,25 @@ const Welcome = props => {
       // if not, redirect on '/'
       user ? setUserSession(user) : props.history.push('/')
     })
-    // Get id from user in firebase
-    firebase.user(userSession.uid)
-    .get()
-    // If success push data user in state object
-    .then(doc => {
-      if (doc && doc.exists) {
-        const myData = doc.data()
-        setUserData(myData)
-      }
+    
+    //  While user is not connected ...
+    if (!!userSession) {
+      // Get id from user in firebase
+      firebase.user(userSession.uid)
+      .get()
+      // If success push data user in state object
+      .then(doc => {
+        if (doc && doc.exists) {
+          const myData = doc.data()
+          setUserData(myData)
+        }
     })
     // If error clg error
     .catch(error => {
       console.log(error);
     })
+    }
+    
     return () => {
       // To cleanUp. stop the listener
       listener()

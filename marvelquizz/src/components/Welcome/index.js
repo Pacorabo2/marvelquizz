@@ -42,7 +42,7 @@ const Welcome = props => {
       // To cleanUp. stop the listener
       listener()
     }
-  })
+  }, [userSession])
 
   return userSession === null ? (
     <Fragment>

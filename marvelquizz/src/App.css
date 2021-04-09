@@ -576,7 +576,7 @@ input:checked+.slider:before {
   color: var(--white-color);
   text-transform: uppercase;
 }
-/* END SUBMIT BUTTON */
+/* END SUBMIT BUTTON */ 
 
 /* FOOTER */
 footer {

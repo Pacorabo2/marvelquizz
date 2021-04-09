@@ -485,6 +485,19 @@ input:checked+.slider:before {
 }
 /* END LOGOUT SWITCH */
 
+/* LEVELS */
+.levelsContainer {
+  display: flex;
+  background-color: var(--light-grey-color);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.headingLevels {
+  margin: 0;
+}
+/* END LEVELS */
+
 /* FOOTER */
 footer {
   display: flex;

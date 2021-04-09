@@ -2,8 +2,8 @@ import React from 'react'
 
 const Levels = () => {
   return (
-    <div>
-      Levels
+    <div className="levelsContainer">
+      <h2 className="headingLevels">Débutant</h2>
     </div>
   )
 }

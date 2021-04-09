@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
+import { QuizMarvel } from '../QuizMarvel'
 import Levels from '../Levels'
 import ProgressBar from '../ProgressBar'
 
 class Quiz extends Component {
+
+  state = {
+    levelNames: ["debutant", "confirme", "expert"],
+    quizLevel: [0]
+  }
+
+  loadQuestions = level => {
+    console.log(level);
+  }
+
+  componentDidMount() {
+    this.loadQuestions(this.state.levelNames[this.state.quizLevel])
+  }
+  
 
     render() {
 

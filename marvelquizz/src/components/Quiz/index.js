@@ -8,14 +8,20 @@ class Quiz extends Component {
   state = {
     levelNames: ["debutant", "confirme", "expert"],
     quizLevel: [0],
-    maxQuestions: 10
+    maxQuestions: 10,
+    storedQuestions: []
   }
 
   // Tot get the array of 'debutant' questions
   loadQuestions = quizz => {
     const fetchedArrayQuiz = QuizMarvel[0].quizz[quizz]
     if (fetchedArrayQuiz.length >= this.state.maxQuestions) {
-
+      // To get a new array without answer
+      const newArray = fetchedArrayQuiz.map(({answer, ...keepRest}) => keepRest)
+      // Push new array in state
+      this.setState({
+        storedQuestions: newArray
+      })
     } else {
       console.log("Pas assez de questions !");
     }

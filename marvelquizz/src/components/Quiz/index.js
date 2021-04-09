@@ -7,12 +7,18 @@ class Quiz extends Component {
 
   state = {
     levelNames: ["debutant", "confirme", "expert"],
-    quizLevel: [0]
+    quizLevel: [0],
+    maxQuestions: 10
   }
 
   // Tot get the array of 'debutant' questions
   loadQuestions = quizz => {
     const fetchedArrayQuiz = QuizMarvel[0].quizz[quizz]
+    if (fetchedArrayQuiz.length >= this.state.maxQuestions) {
+
+    } else {
+      console.log("Pas assez de questions !");
+    }
   }
 
   // To

@@ -40,7 +40,7 @@ class Quiz extends Component {
     if (this.state.storedQuestions !== prevState.storedQuestions) {
         this.setState({
           question: this.state.storedQuestions[this.state.idQuestion].question,
-          option: this.state.storedQuestions[this.state.idQuestion].options
+          options: this.state.storedQuestions[this.state.idQuestion].options
         })
     }
   }
@@ -50,15 +50,21 @@ class Quiz extends Component {
 
       // const { pseudo } = this.props.userData
 
+      // To display options
+      const displayOptions = this.state.options.map((option, index) => {
+        return (
+          <p key={index} className="answerOptions">{option}</p>
+        )
+      })
+
+      console.log(displayOptions);
+
       return (
         <div>
           <Levels/>
           <ProgressBar/>
-          <h2>Notre question Quiz</h2>
-          <p className="answerOptions">Question 1</p>
-          <p className="answerOptions">Question 2</p>
-          <p className="answerOptions">Question 3</p>
-          <p className="answerOptions">Question 4</p>
+          <h2>{this.state.question}</h2>
+          { displayOptions }
           <button className="btnSubmit">Suivant</button>
         </div>
       )

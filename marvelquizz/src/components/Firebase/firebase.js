@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const config = {
@@ -15,6 +16,7 @@ class Firebase {
   constructor() {
     app.initializeApp(config);
     this.auth = app.auth();
+    this.db = app.firestore()
   }
 
   // Inscription
@@ -36,6 +38,8 @@ class Firebase {
 
   // Password recuperation
   passwordReset = email => this.auth.sendPasswordResetEmail(email)
+
+  user = uid => this.db.doc(`users/${uid}`)
 
 
 

@@ -49,7 +49,8 @@ class Quiz extends Component {
 
   submitAnswer = selectedAnswer => {
     this.setState({
-      userAnswer: selectedAnswer
+      userAnswer: selectedAnswer,
+      btnDiasabled: false 
     })
   }
   

@@ -63,7 +63,7 @@ class Quiz extends Component {
       const displayOptions = this.state.options.map((option, index) => {
         return (
           <p key={index} 
-             className="answerOptions"
+             className= {`answerOptions ${this.state.userAnswer === option ? "selected" : null}`}
              onClick={() => this.submitAnswer(option)}
              >
                {option}

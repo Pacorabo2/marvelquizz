@@ -13,7 +13,8 @@ class Quiz extends Component {
     question: null,
     options: [],
     idQuestion: 0,
-    btnDiasabled: true
+    btnDiasabled: true, 
+    userAnswer: null
   }
 
   // Tot get the array of 'debutant' questions
@@ -47,7 +48,9 @@ class Quiz extends Component {
   }
 
   submitAnswer = selectedAnswer => {
-    
+    this.setState({
+      userAnswer: selectedAnswer
+    })
   }
   
 

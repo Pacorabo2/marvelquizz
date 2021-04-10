@@ -12,7 +12,8 @@ class Quiz extends Component {
     storedQuestions: [],
     question: null,
     options: [],
-    idQuestion: 0
+    idQuestion: 0,
+    btnDiasabled: true
   }
 
   // Tot get the array of 'debutant' questions
@@ -44,6 +45,10 @@ class Quiz extends Component {
         })
     }
   }
+
+  submitAnswer = selectedAnswer => {
+    
+  }
   
 
     render() {
@@ -53,7 +58,12 @@ class Quiz extends Component {
       // To display options
       const displayOptions = this.state.options.map((option, index) => {
         return (
-          <p key={index} className="answerOptions">{option}</p>
+          <p key={index} 
+             className="answerOptions"
+             onClick={() => this.submitAnswer(option)}
+             >
+               {option}
+             </p>
         )
       })
 
@@ -65,7 +75,7 @@ class Quiz extends Component {
           <ProgressBar/>
           <h2>{this.state.question}</h2>
           { displayOptions }
-          <button className="btnSubmit">Suivant</button>
+          <button className="btnSubmit" disabled={this.state.btnDiasabled}>Suivant</button>
         </div>
       )
     }

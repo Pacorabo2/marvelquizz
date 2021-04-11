@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { QuizMarvel } from '../QuizMarvel'
 import Levels from '../Levels'
 import ProgressBar from '../ProgressBar'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 class Quiz extends Component {
 
@@ -62,6 +64,8 @@ class Quiz extends Component {
         btnDiasabled: true
       })
     }
+
+    
   }
 
   submitAnswer = selectedAnswer => {

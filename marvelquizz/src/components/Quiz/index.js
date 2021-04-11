@@ -106,6 +106,7 @@ class Quiz extends Component {
     // compare the number of questions
     if (this.state.idQuestion === this.state.maxQuestions -1) {
       // End
+      console.log("Game Over");
     } else {
       // Increment the question
       this.setState(prevState => ({
@@ -164,8 +165,6 @@ class Quiz extends Component {
              </p>
         )
       })
-
-      console.log(displayOptions);
 
       return (
         <div>

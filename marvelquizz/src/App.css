@@ -589,6 +589,7 @@ input:checked+.slider:before {
 .toastify-success {
   min-height: 200px;
   min-width: 200px;
+  text-align: center;
   color: var(--white-color);
   font-weight: bold;
   margin-left: auto;
@@ -601,6 +602,7 @@ input:checked+.slider:before {
 .toastify-error {
   min-height: 200px;
   min-width: 200px;
+  text-align: center;
   color: var(--white-color);
   font-weight: bold;
   margin-left: auto;

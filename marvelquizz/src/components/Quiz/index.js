@@ -5,6 +5,9 @@ import ProgressBar from '../ProgressBar'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
+// Configure toast
+toast.configure()
+
 class Quiz extends Component {
 
   state = {
@@ -41,6 +44,18 @@ class Quiz extends Component {
     }
   }
 
+  showWelcomeMessage = pseudo => {
+    toast.warn(`Bienvenue ${pseudo}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+    });
+  }
+
   // To
   componentDidMount() {
     this.loadQuestions(this.state.levelNames[this.state.quizLevel])
@@ -65,7 +80,9 @@ class Quiz extends Component {
       })
     }
 
-    
+    if(this.props.userData.pseudo) {
+      this.showWelcomeMessage(this.props.userData.pseudo)
+    }
   }
 
   submitAnswer = selectedAnswer => {

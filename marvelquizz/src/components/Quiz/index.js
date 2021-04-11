@@ -20,7 +20,8 @@ class Quiz extends Component {
     idQuestion: 0,
     btnDiasabled: true, 
     userAnswer: null,
-    score: 0
+    score: 0,
+    showWelcomeMsg: false
   }
 
   // Create a ref for good answers
@@ -45,15 +46,23 @@ class Quiz extends Component {
   }
 
   showWelcomeMessage = pseudo => {
-    toast.warn(`Bienvenue ${pseudo}`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      progress: undefined,
-    });
+    // To show once the welcome toast
+    if(!this.state.showWelcomeMsg) {
+
+      this.setState({
+        showWelcomeMsg: true
+      })
+
+      toast.warn(`Bienvenue ${pseudo}`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+      });
+    }
   }
 
   // To

@@ -578,6 +578,15 @@ input:checked+.slider:before {
 }
 /* END SUBMIT BUTTON */ 
 
+/* TOASTIFY COLOR */
+.toastify-color-welcome {
+  color: var(--black-color);
+}
+.toastify-color {
+  color: var(--white-color);
+}
+/* END TOASTIFY COLOR */
+
 /* FOOTER */
 footer {
   display: flex;

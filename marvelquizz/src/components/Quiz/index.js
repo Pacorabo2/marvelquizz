@@ -61,6 +61,7 @@ class Quiz extends Component {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
+        bodyClassName: "toastify-color-welcome"
       });
     }
   }
@@ -129,6 +130,7 @@ class Quiz extends Component {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
+        bodyClassName: "toastify-color"
       });
     } else {
       // Dislpay succes msg
@@ -140,6 +142,7 @@ class Quiz extends Component {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
+        bodyClassName: "toastify-color"
       });
 
     }

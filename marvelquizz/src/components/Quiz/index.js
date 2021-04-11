@@ -51,6 +51,14 @@ class Quiz extends Component {
           options: this.state.storedQuestions[this.state.idQuestion].options
         })
     }
+
+    // get the next question and options
+    if (this.state.idQuestion !== prevState.idQuestion) {
+      this.setState({
+        question: this.state.storedQuestions[this.state.idQuestion].question,
+        options: this.state.storedQuestions[this.state.idQuestion].options
+      })
+    }
   }
 
   submitAnswer = selectedAnswer => {

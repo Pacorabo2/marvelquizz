@@ -73,6 +73,13 @@ class Quiz extends Component {
 
     // Get the good answer
     const goodAnswer = this.storedDataRef.current[this.state.idQuestion].answer
+    // Compare userAnswer with the right answer
+    if (this.state.userAnswer === goodAnswer) {
+      // Increment score
+      this.setState( prevState => ({
+        score: prevState.score +1
+      }))
+    }
   }
   
 

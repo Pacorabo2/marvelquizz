@@ -14,13 +14,18 @@ class Quiz extends Component {
     options: [],
     idQuestion: 0,
     btnDiasabled: true, 
-    userAnswer: null
+    userAnswer: null,
   }
+
+  // Create a ref for good answers
+  storedDataRef = React.createRef()
 
   // Tot get the array of 'debutant' questions
   loadQuestions = quizz => {
     const fetchedArrayQuiz = QuizMarvel[0].quizz[quizz]
     if (fetchedArrayQuiz.length >= this.state.maxQuestions) {
+      // Put the array with the questions in the current ref
+      this.storedDataRef.current = fetchedArrayQuiz
       // To get a new array without answer
       const newArray = fetchedArrayQuiz.map(({answer, ...keepRest}) => keepRest)
       // Push new array in state

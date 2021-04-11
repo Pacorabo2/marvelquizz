@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { QuizMarvel } from '../QuizMarvel'
 import Levels from '../Levels'
 import ProgressBar from '../ProgressBar'
+import QuizOver from '../QuizOver'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -21,7 +22,8 @@ class Quiz extends Component {
     btnDiasabled: true, 
     userAnswer: null,
     score: 0,
-    showWelcomeMsg: false
+    showWelcomeMsg: false,
+    quizEnd: false
   }
 
   // Create a ref for good answers
@@ -102,11 +104,18 @@ class Quiz extends Component {
     })
   }
 
+  // Function to shage QuizEnd in true
+  gameOver = () => {
+    this.setState({
+      quizEnd: true
+    })
+  }
+
   nextQuestion = () => {
     // compare the number of questions
     if (this.state.idQuestion === this.state.maxQuestions -1) {
       // End
-      console.log("Game Over");
+      this.gameOver()
     } else {
       // Increment the question
       this.setState(prevState => ({
@@ -148,7 +157,6 @@ class Quiz extends Component {
 
     }
   }
-  
 
     render() {
 
@@ -166,8 +174,13 @@ class Quiz extends Component {
         )
       })
 
-      return (
-        <div>
+      // Show QuizOver if game finished
+      return this.state.quizEnd ? (
+        <QuizOver />
+      )
+      :
+      (
+        <Fragment>
           <Levels/>
           <ProgressBar/>
           <h2>{this.state.question}</h2>
@@ -179,7 +192,7 @@ class Quiz extends Component {
           >
           Suivant
           </button>
-        </div>
+        </Fragment>
       )
     }
 }

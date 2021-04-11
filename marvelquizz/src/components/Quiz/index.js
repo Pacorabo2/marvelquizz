@@ -56,7 +56,7 @@ class Quiz extends Component {
       toast.warn(`Bienvenue ${pseudo}`, {
         position: "top-right",
         autoClose: 3000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: false,

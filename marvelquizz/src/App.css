@@ -581,9 +581,15 @@ input:checked+.slider:before {
 /* TOASTIFY COLOR */
 .toastify-color-welcome {
   color: var(--black-color);
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
 }
 .toastify-color {
   color: var(--white-color);
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* END TOASTIFY COLOR */
 

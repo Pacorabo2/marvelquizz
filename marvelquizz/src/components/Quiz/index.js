@@ -53,6 +53,18 @@ class Quiz extends Component {
       btnDiasabled: false 
     })
   }
+
+  nextQuestion = () => {
+    // compare the number of questions
+    if (this.state.idQuestion === this.state.maxQuestions -1) {
+      // End
+    } else {
+      // Increment the question
+      this.setState(prevState => ({
+        idQuestion: prevState.idQuestion + 1
+      }))
+    }
+  }
   
 
     render() {
@@ -79,7 +91,13 @@ class Quiz extends Component {
           <ProgressBar/>
           <h2>{this.state.question}</h2>
           { displayOptions }
-          <button className="btnSubmit" disabled={this.state.btnDiasabled}>Suivant</button>
+          <button 
+            className="btnSubmit" 
+            disabled={this.state.btnDiasabled}
+            onClick={this.nextQuestion}
+          >
+          Suivant
+          </button>
         </div>
       )
     }

@@ -120,6 +120,16 @@ class Quiz extends Component {
       this.setState( prevState => ({
         score: prevState.score +1
       }))
+      // Dislpay succes msg
+      toast.success('Bravo +1', {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+      });
     }
   }
   

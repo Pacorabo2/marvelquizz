@@ -130,7 +130,7 @@ class Quiz extends Component {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
-        bodyClassName: "toastify-color"
+        bodyClassName: "toastify-success"
       });
     } else {
       // Dislpay succes msg
@@ -142,7 +142,7 @@ class Quiz extends Component {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
-        bodyClassName: "toastify-color"
+        bodyClassName: "toastify-error"
       });
 
     }

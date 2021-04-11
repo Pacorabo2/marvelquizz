@@ -15,6 +15,7 @@ class Quiz extends Component {
     idQuestion: 0,
     btnDiasabled: true, 
     userAnswer: null,
+    score: 0
   }
 
   // Create a ref for good answers

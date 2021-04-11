@@ -130,6 +130,18 @@ class Quiz extends Component {
         draggable: false,
         progress: undefined,
       });
+    } else {
+      // Dislpay succes msg
+      toast.error('Raté 0', {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+      });
+
     }
   }
   

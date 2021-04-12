@@ -37,7 +37,8 @@ const QuizOver = React.forwardRef((props, ref) => {
               <p className="successMsg">Bravo, vous êtes un expert !</p>
               <button 
                 className="btnResult gameOver"
-                onClick={() => loadLevelQuestions()}>Niveau Suivant</button>
+                // In case ok finished Quiz, to load the initial level questions
+                onClick={() => loadLevelQuestions(0)}>Accueil</button>
             </Fragment>
           )
         }

@@ -48,7 +48,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   (
     <Fragment>
       <div className="stepsBtnContainer">
-        <p className="successMsg">Vous avez échoué!</p>
+        <p className="failureMsg">Vous avez échoué!</p>
       </div>
       <div className="percentage">
         <div className="progressPercent">Réussite: {percent}%</div>

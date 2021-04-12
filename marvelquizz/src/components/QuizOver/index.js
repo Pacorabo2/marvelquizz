@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 const QuizOver = React.forwardRef((props, ref) => {
 
   // Destructuring props
-  const {levelNames, score, maxQuestions, quizLevel, percent} = props
+  const {levelNames, score, maxQuestions, quizLevel, percent, loadLevelQuestions} = props
 
   // To define an array with questions
   const [asked, setAsked] = useState([])
@@ -72,7 +72,7 @@ const QuizOver = React.forwardRef((props, ref) => {
     })
   )
   :
-  // If not, show 'Pas de répnoses' in recap
+  // If not, show 'Pas de réponses' in recap
   (
     <tr>
       <td colspan="3">

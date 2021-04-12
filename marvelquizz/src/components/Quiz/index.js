@@ -173,6 +173,10 @@ class Quiz extends Component {
     }
   }
 
+  loadLevelQuestions = param => {
+
+  }
+
     render() {
 
       // const { pseudo } = this.props.userData
@@ -198,6 +202,7 @@ class Quiz extends Component {
           maxQuestions={this.state.maxQuestions}
           quizLevel={this.state.quizLevel}
           percent={this.state.percent}
+          loadLevelQuestions={this.loadLevelQuestions}
         />
       )
       :

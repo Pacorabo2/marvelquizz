@@ -14,6 +14,44 @@ const QuizOver = React.forwardRef((props, ref) => {
     setAsked(ref.current)
   }, [ref])
 
+  // to get average
+  const averageGrade = maxQuestions / 2
+
+  // Condition to pass Level
+  const decicion = score >= averageGrade ? (
+    <Fragment>
+      {
+        quizLevel < levelNames.length ? 
+        (
+          <Fragment>
+            <p className="successMsg">Bravo, passez au niveau suivant!</p>
+            <button className="btnResult success">Niveau Suivant</button>
+          </Fragment>
+        )
+        :
+        (
+          <Fragment>
+            <p className="successMsg">Bravo, vous êtes un expert !</p>
+            <button className="btnResult success">Niveau Suivant</button>
+          </Fragment>
+        )
+      }
+    </Fragment>
+    <div className="stepsBtnContainer">
+        
+      </div>
+      <div className="percentage">
+        <div className="progressPercent">Réussite: 10%</div>
+        <div className="progressPercent">Note: 10/10</div>
+      </div>
+  )
+  :
+  (
+    <Fragment>
+      
+    </Fragment>
+  )
+
   // Get id, questions and answer from state
   const questionAnswer = asked.map( question => {
     return (
@@ -29,14 +67,8 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   return (
     <Fragment>
-      <div className="stepsBtnContainer">
-        <p className="successMsg">Bravo, vous êtes un expert !</p>
-        <button className="btnResult success">Niveau Suivant</button>
-      </div>
-      <div className="percentage">
-        <div className="progressPercent">Réussite: 10%</div>
-        <div className="progressPercent">Note: 10/10</div>
-      </div>
+      
+      { decicion }
 
       <hr/>
       <p>Les réponses aux questions posées: </p>

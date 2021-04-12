@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const QuizOver = React.forwardRef((props, ref) => {
 
@@ -6,12 +6,15 @@ const QuizOver = React.forwardRef((props, ref) => {
   console.log(ref);
 
   return (
-    <div>
-      QuizOver
-    </div>
+    <Fragment>
+      <div className="stepsBtnContainer">
+        <p className="successMsg">Bravo, vous êtes un expert !</p>
+        <button className="btnResult successMsg">Niveau Suivant</button>
+      </div>
+    </Fragment>
   )
 })
 
  
-
+// React.memo called to prevent execution of unnecessary functions 
 export default React.memo(QuizOver)

@@ -30,13 +30,11 @@ class Quiz extends Component {
     }
     // Put on the state the initialState
     this.state = this.initialState
+
+     // Create a ref for good answers
+  this.storedDataRef = React.createRef()
   }
   
-
-  
-
-  // Create a ref for good answers
-  storedDataRef = React.createRef()
 
   // Tot get the array of 'debutant' questions
   loadQuestions = quizz => {

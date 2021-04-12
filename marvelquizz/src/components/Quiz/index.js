@@ -23,8 +23,7 @@ class Quiz extends Component {
     userAnswer: null,
     score: 0,
     showWelcomeMsg: false,
-    quizEnd: false,
-    percent: 0
+    quizEnd: false
   }
 
   // Create a ref for good answers
@@ -63,7 +62,8 @@ class Quiz extends Component {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
-        bodyClassName: "toastify-color-welcome"
+        bodyClassName: "toastify-color-welcome",
+        percent: ''
       });
     }
   }
@@ -114,7 +114,7 @@ class Quiz extends Component {
     // Condition to skip to next level and store score in state or do the same without skip level
     if (gradePercent >= 50 ) {
       this.setState({
-        quizLevel: this.state.quizLevel + 1 
+        quizLevel: this.state.quizLevel + 1, 
         percent: gradePercent,
         quizEnd: true
       })
@@ -190,7 +190,7 @@ class Quiz extends Component {
       })
 
       // Show QuizOver if game finished
-      return !this.state.quizEnd ? (
+      return this.state.quizEnd ? (
         <QuizOver 
           ref={this.storedDataRef}
           levelNames={this.state.levelNames}

@@ -18,37 +18,42 @@ const QuizOver = React.forwardRef((props, ref) => {
   const averageGrade = maxQuestions / 2
 
   // Condition to pass Level
-  const decicion = score >= averageGrade ? (
+  const decision = score >= averageGrade ? (
     <Fragment>
-      {
-        quizLevel < levelNames.length ? 
-        (
-          <Fragment>
-            <p className="successMsg">Bravo, passez au niveau suivant!</p>
-            <button className="btnResult success">Niveau Suivant</button>
-          </Fragment>
-        )
-        :
-        (
-          <Fragment>
-            <p className="successMsg">Bravo, vous êtes un expert !</p>
-            <button className="btnResult success">Niveau Suivant</button>
-          </Fragment>
-        )
-      }
-    </Fragment>
-    <div className="stepsBtnContainer">
-        
+      <div className="stepsBtnContainer">
+        {
+          quizLevel < levelNames.length ? 
+          (
+            <Fragment>
+              <p className="successMsg">Bravo, passez au niveau suivant!</p>
+              <button className="btnResult success">Niveau Suivant</button>
+            </Fragment>
+          )
+          :
+          (
+            <Fragment>
+              <p className="successMsg">Bravo, vous êtes un expert !</p>
+              <button className="btnResult gameOver">Niveau Suivant</button>
+            </Fragment>
+          )
+        }
       </div>
       <div className="percentage">
-        <div className="progressPercent">Réussite: 10%</div>
-        <div className="progressPercent">Note: 10/10</div>
+        <div className="progressPercent">Réussite: {percent}%</div>
+        <div className="progressPercent">Note: {score}/{maxQuestions}</div>
       </div>
+    </Fragment>
   )
   :
   (
     <Fragment>
-      
+      <div className="stepsBtnContainer">
+        <p className="successMsg">Vous avez échoué!</p>
+      </div>
+      <div className="percentage">
+        <div className="progressPercent">Réussite: {percent}%</div>
+        <div className="progressPercent">Note: {score}/{maxQuestions}</div>
+      </div>
     </Fragment>
   )
 
@@ -68,7 +73,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   return (
     <Fragment>
       
-      { decicion }
+      { decision }
 
       <hr/>
       <p>Les réponses aux questions posées: </p>

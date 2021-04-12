@@ -1,17 +1,23 @@
 import React, { Fragment } from 'react'
 
 const ProgressBar = ({idQuestion, maxQuestions}) => {
-  console.log(idQuestion, maxQuestions);
+  
+  // Function to get a percent number to 'progression'
+  const getPercent = (totalQuestions, questionId) => {
+    return (100/ totalQuestions) * questionId
+  }
 
-  const ActualQuestion = idQuestion +1 
+  const actualQuestion = idQuestion +1 
+  const progressPercent = getPercent(maxQuestions, actualQuestion)
+  
   return (
     <Fragment>
       <div className="percentage">
       <div className="progressPercent">
-        {`Qestion: ${ActualQuestion}/${maxQuestions}`}
+        {`Qestion: ${actualQuestion}/${maxQuestions}`}
       </div>
       <div className="progressPercent">
-        {`Progression: ${ActualQuestion * maxQuestions}%`}
+        {`Progression: ${progressPercent}%`}
       </div>
     </div>
     <div className="progressBar">

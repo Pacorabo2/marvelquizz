@@ -2,6 +2,9 @@ import React, { Fragment, useEffect, useState } from 'react'
 
 const QuizOver = React.forwardRef((props, ref) => {
 
+  // Destructuring props
+  const {levelNames, score, maxQuestions, quizLevel, percent} = props
+
   // To define an array with questions
   const [asked, setAsked] = useState([])
   

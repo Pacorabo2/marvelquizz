@@ -180,8 +180,12 @@ class Quiz extends Component {
     }
   }
 
+  // To load questions of next level
   loadLevelQuestions = param => {
-    this.setState()
+    // change quizLevel value
+    this.setState({...this.initialState, quizLevel: param})
+    // Load Questions of the level defined
+    this.loadQuestions(this.state.levelNames[param])
   }
 
     render() {

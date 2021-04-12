@@ -1,6 +1,7 @@
 import React from 'react'
 
-const QuizOver = () => {
+const QuizOver = (props) => {
+  console.log(props);
   return (
     <div>
       QuizOver

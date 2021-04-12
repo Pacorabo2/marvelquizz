@@ -175,7 +175,7 @@ class Quiz extends Component {
       })
 
       // Show QuizOver if game finished
-      return this.state.quizEnd ? (
+      return !this.state.quizEnd ? (
         <QuizOver ref={this.storedDataRef}/>
       )
       :

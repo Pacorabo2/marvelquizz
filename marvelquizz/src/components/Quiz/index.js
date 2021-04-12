@@ -68,7 +68,7 @@ class Quiz extends Component {
     }
   }
 
-  // To
+  // To load the Questions and push in an array on state
   componentDidMount() {
     this.loadQuestions(this.state.levelNames[this.state.quizLevel])
   }
@@ -176,7 +176,7 @@ class Quiz extends Component {
 
       // Show QuizOver if game finished
       return this.state.quizEnd ? (
-        <QuizOver />
+        <QuizOver ref={this.storedDataRef}/>
       )
       :
       (

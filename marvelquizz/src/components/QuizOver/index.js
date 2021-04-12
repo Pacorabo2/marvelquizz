@@ -2,13 +2,14 @@ import React, { Fragment, useEffect, useState } from 'react'
 
 const QuizOver = React.forwardRef((props, ref) => {
 
-  console.log(props);
-  console.log(ref);
-
+  // To define an array with questions
   const [asked, setAsked] = useState([])
-
+  console.log(asked);
+  
+  // To listen if changes on ref
   useEffect(()=> {
-
+    // To push in state ref.current to get questions and answers on array
+    setAsked(ref.current)
   }, [ref])
 
   return (

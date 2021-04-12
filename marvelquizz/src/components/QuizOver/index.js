@@ -9,8 +9,15 @@ const QuizOver = React.forwardRef((props, ref) => {
     <Fragment>
       <div className="stepsBtnContainer">
         <p className="successMsg">Bravo, vous êtes un expert !</p>
-        <button className="btnResult successMsg">Niveau Suivant</button>
+        <button className="btnResult success">Niveau Suivant</button>
       </div>
+      <div className="percentage">
+        <div className="progressPercent">Réussite: 10%</div>
+        <div className="progressPercent">Note: 10/10</div>
+      </div>
+
+      <hr/>
+      <p>Les réponses aux questions posées: </p>
     </Fragment>
   )
 })

@@ -103,7 +103,10 @@ class Quiz extends Component {
     })
   }
 
-  // Function to shage QuizEnd in true
+  // Method to get percent of good ansWers
+  getPercentage = (maxQuest, ourScore) => (ourScore / maxQuest) * 100
+
+  // Function to change QuizEnd in true
   gameOver = () => {
     this.setState({
       quizEnd: true

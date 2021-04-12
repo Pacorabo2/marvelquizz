@@ -18,6 +18,22 @@ const QuizOver = React.forwardRef((props, ref) => {
 
       <hr/>
       <p>Les réponses aux questions posées: </p>
+      <div className="answerContainer">
+        <table className="answers">
+          <thead>
+            <tr>
+              <th>Questions</th>
+              <th>Réponses</th>
+              <th>Infos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </Fragment>
   )
 })

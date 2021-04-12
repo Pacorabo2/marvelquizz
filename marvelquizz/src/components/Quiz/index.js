@@ -11,20 +11,29 @@ toast.configure()
 
 class Quiz extends Component {
 
-  state = {
-    levelNames: ["debutant", "confirme", "expert"],
-    quizLevel: [0],
-    maxQuestions: 10,
-    storedQuestions: [],
-    question: null,
-    options: [],
-    idQuestion: 0,
-    btnDiasabled: true, 
-    userAnswer: null,
-    score: 0,
-    showWelcomeMsg: false,
-    quizEnd: false
+  constructor(props) {
+    super(props)
+
+    this.initialState = {
+      levelNames: ["debutant", "confirme", "expert"],
+      quizLevel: [0],
+      maxQuestions: 10,
+      storedQuestions: [],
+      question: null,
+      options: [],
+      idQuestion: 0,
+      btnDiasabled: true, 
+      userAnswer: null,
+      score: 0,
+      showWelcomeMsg: false,
+      quizEnd: false
+    }
+    // Put on the state the initialState
+    this.state = this.initialState
   }
+  
+
+  
 
   // Create a ref for good answers
   storedDataRef = React.createRef()
@@ -174,7 +183,7 @@ class Quiz extends Component {
   }
 
   loadLevelQuestions = param => {
-
+    this.setState()
   }
 
     render() {

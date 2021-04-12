@@ -108,6 +108,9 @@ class Quiz extends Component {
 
   // Function to change QuizEnd in true
   gameOver = () => {
+    // Assign score in variable
+    const gradePercent = this.getPercentage(this.state.maxQuestions, this.state.score)
+    
     this.setState({
       quizEnd: true
     })

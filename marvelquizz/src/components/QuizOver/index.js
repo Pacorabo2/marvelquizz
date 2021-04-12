@@ -56,19 +56,32 @@ const QuizOver = React.forwardRef((props, ref) => {
       </div>
     </Fragment>
   )
+  // If score is up to avergrade show responses and other thinks
+  const questionAnswer = score >= averageGrade ? (
+    // Get id, questions and answer from state
+    asked.map( question => {
+      return (
+        <tr key={question.id}>
+          <td>{question.question}</td>
+          <td>{question.answer}</td>
+          <td>
+            <button className="btnInfo">Infos</button>
+          </td>
+        </tr>
+      )
+    })
+  )
+  :
+  // If not, show 'Pas de répnoses' in recap
+  (
+    <tr>
+      <td colspan="3">
+        <p style={{textAlign: 'center', color: 'red'}}>Pas de réponses</p>
+      </td>
+    </tr>
+  )
+  
 
-  // Get id, questions and answer from state
-  const questionAnswer = asked.map( question => {
-    return (
-      <tr key={question.id}>
-        <td>{question.question}</td>
-        <td>{question.answer}</td>
-        <td>
-          <button className="btnInfo">Infos</button>
-        </td>
-      </tr>
-    )
-  })
 
   return (
     <Fragment>

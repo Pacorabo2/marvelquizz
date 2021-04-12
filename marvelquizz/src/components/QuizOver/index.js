@@ -4,7 +4,7 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   console.log(props);
   console.log(ref);
-  
+
   return (
     <div>
       QuizOver
@@ -14,4 +14,4 @@ const QuizOver = React.forwardRef((props, ref) => {
 
  
 
-export default QuizOver
+export default React.memo(QuizOver)

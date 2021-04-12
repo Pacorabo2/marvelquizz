@@ -191,7 +191,14 @@ class Quiz extends Component {
 
       // Show QuizOver if game finished
       return !this.state.quizEnd ? (
-        <QuizOver ref={this.storedDataRef}/>
+        <QuizOver 
+          ref={this.storedDataRef}
+          levelNames={this.state.levelNames}
+          score={this.state.score}
+          maxQuestions={this.state.maxQuestions}
+          quizLevel={this.state.quizLevel}
+          percent={this.state.percent}
+        />
       )
       :
       (

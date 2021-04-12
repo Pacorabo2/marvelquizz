@@ -6,7 +6,7 @@ const ProgressBar = ({idQuestion, maxQuestions}) => {
     <Fragment>
       <div className="percentage">
       <div className="progressPercent">
-        Question: 1/10
+        {`Qestion: ${idQuestion}/10`}
       </div>
       <div className="progressPercent">
         Progression: 10%

@@ -23,7 +23,8 @@ class Quiz extends Component {
     userAnswer: null,
     score: 0,
     showWelcomeMsg: false,
-    quizEnd: false
+    quizEnd: false,
+    percent: 0
   }
 
   // Create a ref for good answers
@@ -110,10 +111,19 @@ class Quiz extends Component {
   gameOver = () => {
     // Assign score in variable
     const gradePercent = this.getPercentage(this.state.maxQuestions, this.state.score)
-    
-    this.setState({
-      quizEnd: true
-    })
+    // Condition to skip to next level and store score in state or do the same without skip level
+    if (gradePercent >= 50 ) {
+      this.setState({
+        quizLevel: this.state.quizLevel + 1 
+        percent: gradePercent,
+        quizEnd: true
+      })
+    } else {
+      this.setState({ 
+        percent: gradePercent,
+        quizEnd: true
+      })
+    }
   }
 
   nextQuestion = () => {

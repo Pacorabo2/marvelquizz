@@ -27,4 +27,4 @@ const ProgressBar = ({idQuestion, maxQuestions}) => {
   )
 }
 
-export default ProgressBar
+export default React.memo(ProgressBar)

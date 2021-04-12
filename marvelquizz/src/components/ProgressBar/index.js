@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
-const ProgressBar = () => {
+const ProgressBar = ({idQuestion, maxQuestions}) => {
+  console.log(idQuestion, maxQuestions);
   return (
     <Fragment>
       <div className="percentage">

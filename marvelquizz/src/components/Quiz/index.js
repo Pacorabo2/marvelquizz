@@ -182,7 +182,7 @@ class Quiz extends Component {
       (
         <Fragment>
           <Levels/>
-          <ProgressBar/>
+          <ProgressBar idQuestion={this.state.idQuestion} maxQuestions={this.state.maxQuestions}/>
           <h2>{this.state.question}</h2>
           { displayOptions }
           <button 

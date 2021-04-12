@@ -1,9 +1,15 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 const QuizOver = React.forwardRef((props, ref) => {
 
   console.log(props);
   console.log(ref);
+
+  const [asked, setAsked] = useState([])
+
+  useEffect(()=> {
+
+  }, [ref])
 
   return (
     <Fragment>

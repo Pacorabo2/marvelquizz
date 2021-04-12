@@ -1,12 +1,17 @@
 import React from 'react'
 
-const QuizOver = (props) => {
+const QuizOver = React.forwardRef((props, ref) => {
+
   console.log(props);
+  console.log(ref);
+  
   return (
     <div>
       QuizOver
     </div>
   )
-}
+})
+
+ 
 
 export default QuizOver

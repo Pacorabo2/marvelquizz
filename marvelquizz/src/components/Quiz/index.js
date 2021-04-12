@@ -35,7 +35,6 @@ class Quiz extends Component {
     if (fetchedArrayQuiz.length >= this.state.maxQuestions) {
       // Put the array with the questions in the current ref
       this.storedDataRef.current = fetchedArrayQuiz
-      console.log(this.storedDataRef.current);
       // To get a new array without answer
       const newArray = fetchedArrayQuiz.map(({answer, ...keepRest}) => keepRest)
       // Push new array in state
@@ -176,7 +175,7 @@ class Quiz extends Component {
 
       // Show QuizOver if game finished
       return !this.state.quizEnd ? (
-        <QuizOver ref={this.storedDataRef}/>
+        <QuizOver ref={this.storedDataRef} testProps="Test"/>
       )
       :
       (

@@ -190,7 +190,7 @@ class Quiz extends Component {
             disabled={this.state.btnDiasabled}
             onClick={this.nextQuestion}
           >
-          Suivant
+          {this.state.idQuestion < this.state.maxQuestions - 1 ? "Suivant" : "Terminer" }
           </button>
         </Fragment>
       )

@@ -4,13 +4,25 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   // To define an array with questions
   const [asked, setAsked] = useState([])
-  console.log(asked);
   
   // To listen if changes on ref
   useEffect(()=> {
     // To push in state ref.current to get questions and answers on array
     setAsked(ref.current)
   }, [ref])
+
+  // Get id, questions and answer from state
+  const questionAnswer = asked.map( question => {
+    return (
+      <tr key={question.id}>
+        <td>{question.question}</td>
+        <td>{question.answer}</td>
+        <td>
+          <button className="btnInfo">Infos</button>
+        </td>
+      </tr>
+    )
+  })
 
   return (
     <Fragment>
@@ -35,9 +47,7 @@ const QuizOver = React.forwardRef((props, ref) => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-            </tr>
+            { questionAnswer }
           </tbody>
         </table>
       </div>

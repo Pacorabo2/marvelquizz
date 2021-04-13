@@ -1,7 +1,9 @@
 import React from 'react'
 import Stepper from 'react-stepper-horizontal'
 
-const Levels = () => {
+const Levels = ({quizLevel, levelNames}) => {
+  console.log(levelNames[0]);
+
   return (
     <div className="levelsContainer">
       {/* <h2 className="headingLevels">Débutant</h2> */}

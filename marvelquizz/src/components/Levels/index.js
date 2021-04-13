@@ -20,6 +20,15 @@ const Levels = ({quizLevel, levelNames}) => {
         <Stepper 
           steps={ levels } 
           activeStep={ quizLevel } 
+          circleTop={0}
+          activeTitleColor={"#d31017"}
+          activeColor={"#d31017"}
+          completeTitleColor={"#E0E0E0"}
+          completeColor={"#E0E0E0"}
+          completeBarColor={"#E0E0E0"}
+          barStyle={"dashed"}
+          size={45}
+          circleFontSize={20}
         />
     </div>
   )

@@ -17,9 +17,10 @@ const QuizOver = React.forwardRef((props, ref) => {
   // to get average
   const averageGrade = maxQuestions / 2
 
-  // Condition if average is not realized
+  // Condition if average is not realized restart level
   if (score < averageGrade) {
-    setTimeout(() => loadLevelQuestions(0), 3000)
+    // setTimeout(() => loadLevelQuestions(0), 3000)
+    setTimeout(() => loadLevelQuestions(quizLevel), 5000)
   }
 
   // Condition to pass Level
@@ -87,7 +88,7 @@ const QuizOver = React.forwardRef((props, ref) => {
     <tr>
       <td colspan="3">
         <div className="loader"></div>
-        <p style={{textAlign: 'center', color: 'red'}}>Pas de réponses</p>
+        <p style={{textAlign: 'center', color: 'red'}}>Passez ce niveau pour débloquer le niveau suivant. Recommençons!</p>
       </td>
     </tr>
   )

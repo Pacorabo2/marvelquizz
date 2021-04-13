@@ -9,7 +9,7 @@ const Levels = ({quizLevel, levelNames}) => {
 
   useEffect(() => {
     // map on LevelNames to get levels
-    const quizSteps = levelNames.map( level => ({title: level}))
+    const quizSteps = levelNames.map( level => ({title: level.toUpperCase()}))
     // push on state eh array 'quizSteps' with levels name
     setLevels(quizSteps)
   }, [levelNames])

@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Stepper from 'react-stepper-horizontal'
 
 const Levels = ({quizLevel, levelNames}) => {
-  console.log(levelNames[0]);
+  
+
+  useEffect(() => {
+    // map on LevelNames to get levels
+    const quizSteps = levelNames.map( level => ({title: level}))
+  })
 
   return (
     <div className="levelsContainer">

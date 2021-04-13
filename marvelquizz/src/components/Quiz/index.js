@@ -54,7 +54,7 @@ class Quiz extends Component {
     }
   }
 
-  showWelcomeMessage = pseudo => {
+  showToastMsg = pseudo => {
     // To show once the welcome toast
     if(!this.state.showWelcomeMsg) {
 
@@ -100,8 +100,8 @@ class Quiz extends Component {
       })
     }
 
-    if(this.props.userData.pseudo) {
-      this.showWelcomeMessage(this.props.userData.pseudo)
+    if(this.props.userData.pseudo !== prevProps.userData.pseudo) {
+      this.showToastMsg(this.props.userData.pseudo)
     }
   }
 
@@ -183,7 +183,6 @@ class Quiz extends Component {
 
   // To load questions of next level
   loadLevelQuestions = param => {
-    
     // change quizLevel value
     this.setState({...this.initialState, quizLevel: param})
     // Load Questions of the level defined

@@ -19,7 +19,7 @@ const Levels = ({quizLevel, levelNames}) => {
       {/* <h2 className="headingLevels">Débutant</h2> */}
         <Stepper 
           steps={ levels } 
-          activeStep={ 1 } 
+          activeStep={ quizLevel } 
         />
     </div>
   )

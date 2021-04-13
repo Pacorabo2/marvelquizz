@@ -32,7 +32,7 @@ const QuizOver = React.forwardRef((props, ref) => {
           quizLevel < levelNames.length ? 
           (
             <Fragment>
-              <p className="successMsg"> <GiTrophyCup/>Bravo, passez au niveau suivant!</p>
+              <p className="successMsg"> <GiTrophyCup size='60px'/>Bravo, passez au niveau suivant!</p>
               <button 
                 className="btnResult success"
                 onClick={() => loadLevelQuestions(quizLevel)}>Niveau Suivant</button>

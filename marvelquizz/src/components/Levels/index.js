@@ -14,6 +14,8 @@ const Levels = ({quizLevel, levelNames}) => {
     setLevels(quizSteps)
   }, [levelNames])
 
+  console.log(levels);
+
   return (
     <div className="levelsContainer">
       {/* <h2 className="headingLevels">Débutant</h2> */}
@@ -31,4 +33,4 @@ const Levels = ({quizLevel, levelNames}) => {
   )
 }
 
-export default Levels
+export default React.memo(Levels)

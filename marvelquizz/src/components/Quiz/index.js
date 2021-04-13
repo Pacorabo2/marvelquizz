@@ -83,7 +83,7 @@ class Quiz extends Component {
 
   // To push questions and options in State
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.storedQuestions !== prevState.storedQuestions) {
+    if ((this.state.storedQuestions !== prevState.storedQuestions) && this.state.storedQuestions.length) {
         this.setState({
           question: this.state.storedQuestions[this.state.idQuestion].question,
           options: this.state.storedQuestions[this.state.idQuestion].options
@@ -91,7 +91,7 @@ class Quiz extends Component {
     }
 
     // get the next question and options
-    if (this.state.idQuestion !== prevState.idQuestion) {
+    if ((this.state.idQuestion !== prevState.idQuestion) && this.state.storedQuestions.length) {
       this.setState({
         question: this.state.storedQuestions[this.state.idQuestion].question,
         options: this.state.storedQuestions[this.state.idQuestion].options,

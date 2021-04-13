@@ -17,6 +17,11 @@ const QuizOver = React.forwardRef((props, ref) => {
   // to get average
   const averageGrade = maxQuestions / 2
 
+  // Condition if average is not realized
+  if (score < averageGrade) {
+    setTimeout(() => loadLevelQuestions(0), 3000)
+  }
+
   // Condition to pass Level
   const decision = score >= averageGrade ? (
     <Fragment>

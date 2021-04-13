@@ -81,6 +81,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   (
     <tr>
       <td colspan="3">
+        <div className="loader"></div>
         <p style={{textAlign: 'center', color: 'red'}}>Pas de réponses</p>
       </td>
     </tr>

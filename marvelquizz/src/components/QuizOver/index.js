@@ -86,8 +86,6 @@ const QuizOver = React.forwardRef((props, ref) => {
     </tr>
   )
   
-
-
   return (
     <Fragment>
       

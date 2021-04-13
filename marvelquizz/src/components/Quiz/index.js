@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // Configure toast
 toast.configure()
 
+
 class Quiz extends Component {
 
   constructor(props) {
@@ -16,7 +17,7 @@ class Quiz extends Component {
 
     this.initialState = {
       levelNames: ["debutant", "confirme", "expert"],
-      quizLevel: [0],
+      quizLevel: 0,
       maxQuestions: 10,
       storedQuestions: [],
       question: null,
@@ -30,11 +31,11 @@ class Quiz extends Component {
     }
     // Put on the state the initialState
     this.state = this.initialState
-
-     // Create a ref for good answers
+    // Create a ref for good answers
   this.storedDataRef = React.createRef()
+
   }
-  
+
 
   // Tot get the array of 'debutant' questions
   loadQuestions = quizz => {
@@ -135,7 +136,7 @@ class Quiz extends Component {
 
   nextQuestion = () => {
     // compare the number of questions
-    if (this.state.idQuestion === this.state.maxQuestions -1) {
+    if (this.state.idQuestion === this.state.maxQuestions - 1) {
       // End
       this.gameOver()
     } else {
@@ -151,10 +152,10 @@ class Quiz extends Component {
     if (this.state.userAnswer === goodAnswer) {
       // Increment score
       this.setState( prevState => ({
-        score: prevState.score +1
+        score: prevState.score + 1
       }))
       // Dislpay succes msg
-      toast.success('Bravo +1', {
+      toast.success('Bravo + 1', {
         position: "top-right",
         autoClose: 3500,
         hideProgressBar: false,
@@ -182,6 +183,7 @@ class Quiz extends Component {
 
   // To load questions of next level
   loadLevelQuestions = param => {
+    
     // change quizLevel value
     this.setState({...this.initialState, quizLevel: param})
     // Load Questions of the level defined
@@ -190,7 +192,6 @@ class Quiz extends Component {
 
     render() {
 
-      // const { pseudo } = this.props.userData
 
       // To display options
       const displayOptions = this.state.options.map((option, index) => {

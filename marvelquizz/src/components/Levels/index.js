@@ -17,12 +17,10 @@ const Levels = ({quizLevel, levelNames}) => {
   return (
     <div className="levelsContainer">
       {/* <h2 className="headingLevels">Débutant</h2> */}
-      <div>
         <Stepper 
           steps={ levels } 
           activeStep={ 1 } 
         />
-      </div>
     </div>
   )
 }

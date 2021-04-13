@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Stepper from 'react-stepper-horizontal'
 
 const Levels = ({quizLevel, levelNames}) => {
+
+  // Define levels
+  const [levels, setLevels] = useState([])
   
 
   useEffect(() => {

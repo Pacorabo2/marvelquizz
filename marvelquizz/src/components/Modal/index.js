@@ -1,10 +1,14 @@
 import React from 'react'
 
-const Modal = () => {
+const Modal = ({ showModal }) => {
   return (
-    <div>
-      Modal
-    </div>
+    showModal && (
+      <div className="modalBackground">
+        <div className="modalcontainer">
+          
+        </div>
+      </div>
+    )
   )
 }
 

@@ -11,7 +11,11 @@ const QuizOver = React.forwardRef((props, ref) => {
   // Destructuring props
   const {levelNames, score, maxQuestions, quizLevel, percent, loadLevelQuestions} = props
 
+  // Get API KEY 
   const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_KEY
+
+  // Define hash
+  const hash = '5daddad6f060b32ee6ab13127f1df6bd'
 
   // To define an array with questions
   const [asked, setAsked] = useState([])

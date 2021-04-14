@@ -91,7 +91,9 @@ const QuizOver = React.forwardRef((props, ref) => {
   (
     <tr>
       <td colspan="3">
-        <Loader />
+        <Loader 
+          loadingMsg={"Passez ce niveau pour débloquer le niveau suivant. Recommençons!"}
+          styling={{textAlign: 'center', color: 'red'}}/>
       </td>
     </tr>
   )

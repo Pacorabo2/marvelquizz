@@ -8,8 +8,8 @@ const Loader = ({ loadingMsg, styling }) => {
   return (
     <Fragment>
       <div className="loader"></div>
-      <p style={{textAlign: 'center', color: 'red'}}>
-        Passez ce niveau pour débloquer le niveau suivant. Recommençons!
+      <p style={styling}>
+        {loadingMsg}
       </p>
     </Fragment>
     

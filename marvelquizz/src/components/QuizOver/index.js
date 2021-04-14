@@ -24,7 +24,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   }, [ref])
 
   const showModal = id => {
-
+    setOpenModal(true)
   }
 
   // to get average
@@ -131,7 +131,9 @@ const QuizOver = React.forwardRef((props, ref) => {
           </tbody>
         </table>
       </div>
-      <Modal/>
+      <Modal showModal={openModal}>
+        Modal
+      </Modal>
     </Fragment>
   )
 })

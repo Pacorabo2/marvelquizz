@@ -1,5 +1,8 @@
 // Functionals import
 import React, { Fragment } from 'react'
+// Esthetics import
+import './Loader.css'
+
 
 const Loader = () => {
   return (

@@ -2,6 +2,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 // Components import
 import Loader from '../Loader'
+import Modal from '../Modal'
 // Esthetics import
 import { GiTrophyCup } from 'react-icons/gi'
 
@@ -119,6 +120,7 @@ const QuizOver = React.forwardRef((props, ref) => {
           </tbody>
         </table>
       </div>
+      <Modal/>
     </Fragment>
   )
 })

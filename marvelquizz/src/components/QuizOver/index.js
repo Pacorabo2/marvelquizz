@@ -1,4 +1,6 @@
+// Functionals import
 import React, { Fragment, useEffect, useState } from 'react'
+// Esthetics import
 import { GiTrophyCup } from 'react-icons/gi'
 
 const QuizOver = React.forwardRef((props, ref) => {
@@ -20,7 +22,6 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   // Condition if average is not realized restart level
   if (score < averageGrade) {
-    // setTimeout(() => loadLevelQuestions(0), 3000)
     setTimeout(() => loadLevelQuestions(quizLevel), 5000)
   }
 

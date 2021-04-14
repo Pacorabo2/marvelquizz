@@ -23,8 +23,14 @@ const QuizOver = React.forwardRef((props, ref) => {
     setAsked(ref.current)
   }, [ref])
 
+  // To open the Modal
   const showModal = id => {
     setOpenModal(true)
+  }
+
+  // To close the Modal
+  const hideModal = id => {
+    setOpenModal(false)
   }
 
   // to get average
@@ -131,7 +137,7 @@ const QuizOver = React.forwardRef((props, ref) => {
           </tbody>
         </table>
       </div>
-      <Modal showModal={openModal}>
+      <Modal showModal={openModal} hideModal={hideModal}>
         <div className="modalHeader">
           <h2>Titre</h2>
         </div>

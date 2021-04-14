@@ -34,7 +34,9 @@ const Logout = () => {
           />
           <span className="slider round" data-tip="Déconnexion"></span>
       </label>
-      <ReactToolTip/>
+      <ReactToolTip
+        place="left"
+        effect="solid"/>
     </div>
   )
 }

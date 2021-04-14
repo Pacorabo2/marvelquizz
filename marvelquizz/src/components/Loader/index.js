@@ -4,7 +4,7 @@ import React, { Fragment } from 'react'
 import './Loader.css'
 
 
-const Loader = () => {
+const Loader = ({ loadingMsg, styling }) => {
   return (
     <Fragment>
       <div className="loader"></div>

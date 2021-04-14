@@ -29,7 +29,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   }
 
   // To close the Modal
-  const hideModal = id => {
+  const hideModal = () => {
     setOpenModal(false)
   }
 

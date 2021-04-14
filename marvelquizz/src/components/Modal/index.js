@@ -4,8 +4,8 @@ const Modal = ({ showModal, hideModal, children }) => {
   return (
     // conditional rendering of modal if openModal is true
     showModal && (
-      <div className="modalBackground" onclick={hideModal}>
-        <div className="modalcontainer">
+      <div className="modalBackground" onClick={hideModal}>
+        <div className="modalContainer">
           { children }
         </div>
       </div>

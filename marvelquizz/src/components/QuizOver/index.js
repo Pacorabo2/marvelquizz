@@ -13,12 +13,19 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   // To define an array with questions
   const [asked, setAsked] = useState([])
+
+  // To define if modal is open or close
+  const [openModal, setOpenModal] = useState(false)
   
   // To listen if changes on ref
   useEffect(()=> {
     // To push in state ref.current to get questions and answers on array
     setAsked(ref.current)
   }, [ref])
+
+  const showModal = id => {
+
+  }
 
   // to get average
   const averageGrade = maxQuestions / 2
@@ -83,6 +90,7 @@ const QuizOver = React.forwardRef((props, ref) => {
           <td>
             <button 
               className="btnInfo"
+              // Onclick event with question id in props
               onClick={ () => showModal(question.heroId) }
               >Infos</button>
           </td>

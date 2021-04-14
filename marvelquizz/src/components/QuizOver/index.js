@@ -132,7 +132,15 @@ const QuizOver = React.forwardRef((props, ref) => {
         </table>
       </div>
       <Modal showModal={openModal}>
-        Modal
+        <div className="modalHeader">
+          <h2>Titre</h2>
+        </div>
+        <div className="modalBody">
+          <h3>Titre 2</h3>
+        </div>
+        <div className="modalFooter">
+          <button className="modalBtn">Fermer</button>
+        </div>
       </Modal>
     </Fragment>
   )

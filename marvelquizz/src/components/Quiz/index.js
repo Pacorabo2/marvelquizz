@@ -53,11 +53,7 @@ class Quiz extends Component {
       // To get a new array without answer
       const newArray = fetchedArrayQuiz.map(({answer, ...keepRest}) => keepRest)
       // Push new array in state
-      this.setState({
-        storedQuestions: newArray
-      })
-    } else {
-      console.log("Pas assez de questions !");
+      this.setState({ storedQuestions: newArray })
     }
   }
 
@@ -65,9 +61,7 @@ class Quiz extends Component {
     // To show once the welcome toast
     if(!this.state.showWelcomeMsg) {
 
-      this.setState({
-        showWelcomeMsg: true
-      })
+      this.setState({ showWelcomeMsg: true })
 
       toast.warn(`Bienvenue ${pseudo}`, {
         position: "top-right",
@@ -155,9 +149,7 @@ class Quiz extends Component {
     // compare the number of questions
     if (this.state.idQuestion === this.state.maxQuestions - 1) {
       // End of Quiz
-      this.setState({
-        quizEnd: true
-      })
+      this.setState({ quizEnd: true })
     } else {
       // Increment the question
       this.setState(prevState => ({
@@ -170,9 +162,7 @@ class Quiz extends Component {
     // Compare userAnswer with the right answer
     if (this.state.userAnswer === goodAnswer) {
       // Increment score
-      this.setState( prevState => ({
-        score: prevState.score + 1
-      }))
+      this.setState( prevState => ({ score: prevState.score + 1 }))
       // Dislpay succes msg
       toast.success('Bravo + 1', {
         position: "top-right",

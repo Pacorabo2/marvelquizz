@@ -1,5 +1,7 @@
 // Functionals import
 import React, { Fragment, useEffect, useState } from 'react'
+// Components import
+import Loader from '../Loader'
 // Esthetics import
 import { GiTrophyCup } from 'react-icons/gi'
 
@@ -89,8 +91,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   (
     <tr>
       <td colspan="3">
-        <div className="loader"></div>
-        <p style={{textAlign: 'center', color: 'red'}}>Passez ce niveau pour débloquer le niveau suivant. Recommençons!</p>
+        <Loader />
       </td>
     </tr>
   )

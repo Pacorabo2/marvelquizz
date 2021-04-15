@@ -166,7 +166,7 @@ class Quiz extends Component {
       // Dislpay succes msg
       toast.success('Bravo + 1', {
         position: "top-right",
-        autoClose: 3500,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

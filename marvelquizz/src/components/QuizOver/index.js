@@ -13,7 +13,7 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   // Get API KEY 
   const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_KEY
-
+console.log(API_PUBLIC_KEY);
   // Define hash
   const hash = '5daddad6f060b32ee6ab13127f1df6bd'
 

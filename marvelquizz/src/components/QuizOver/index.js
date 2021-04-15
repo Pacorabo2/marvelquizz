@@ -190,6 +190,7 @@ const QuizOver = React.forwardRef((props, ref) => {
             src={charactersInfo.data.results[0].thumbnail.path+'.'+charactersInfo.data.results[0].thumbnail.extension} 
             alt={charactersInfo.data.results[0].name}
           />
+        <p>{charactersInfo.attributionText}</p>
         </div>
         <div className="comicDetails">
         </div>

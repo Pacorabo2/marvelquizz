@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-basis: 80%;
+}

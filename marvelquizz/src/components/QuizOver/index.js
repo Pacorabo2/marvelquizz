@@ -6,6 +6,7 @@ import Loader from '../Loader'
 import Modal from '../Modal'
 // Esthetics import
 import { GiTrophyCup } from 'react-icons/gi'
+import './quizOver.css'
 
 const QuizOver = React.forwardRef((props, ref) => {
 

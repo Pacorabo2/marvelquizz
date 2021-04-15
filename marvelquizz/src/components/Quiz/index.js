@@ -7,9 +7,11 @@ import ProgressBar from '../ProgressBar'
 import QuizOver from '../QuizOver'
 // Data import
 import { QuizMarvel } from '../QuizMarvel'
-
+// Esthetics import
 import { FaChevronRight } from 'react-icons/fa'
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
+import './quiz.css'
+
 
 // Configure toast
 toast.configure()

@@ -1,16 +1,20 @@
-import React, { useRef, useEffect, useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+// Functionals import
+import React, { useRef, useEffect, useState, Fragment } from 'react'
+import { Link } from 'react-router-dom'
+// Esthetics import
+import './landing.css'
+
 
 const Landing = () => {
 
-  const refWolverine = useRef(false);
+  const refWolverine = useRef(false)
 
-  const [btn, setBtn] = useState(null);
+  const [btn, setBtn] = useState(null)
 
 
   useEffect(() => {
     // Add ClassName to show  claws
-    refWolverine.current.classList.add('startingImg');
+    refWolverine.current.classList.add('startingImg')
     setTimeout(() => {
       // remove className tohide  claws
       refWolverine.current.classList.remove('startingImg')

@@ -1,5 +1,10 @@
+// Functionals import
 import React from 'react';
-import Marvel from '../../images/Marvel_quiz.png'
+// Esthetics import
+import Marvel from '../../images/Marvel_quiz.png';
+import './header.css'
+
+
 
 const Header = () => {
   return (

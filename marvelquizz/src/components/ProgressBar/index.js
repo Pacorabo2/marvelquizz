@@ -1,4 +1,7 @@
+// Functionals import
 import React, { Fragment } from 'react'
+// Esthetics import
+import './progressBar.css'
 
 const ProgressBar = ({idQuestion, maxQuestions}) => {
   

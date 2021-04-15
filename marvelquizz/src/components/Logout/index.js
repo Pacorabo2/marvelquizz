@@ -1,7 +1,10 @@
+// Functionals import
 import React, { useState, useEffect, useContext } from 'react'
 import { FirebaseContext } from '../Firebase'
 // Import tools
 import ReactToolTip from 'react-tooltip'
+// Esthetics import
+import './logout.css'
 
 
 const Logout = () => {

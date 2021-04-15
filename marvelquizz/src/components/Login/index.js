@@ -1,7 +1,11 @@
+// Functionals import
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 // Import context
 import { FirebaseContext } from '../Firebase'
+// Esthetics import
+import './login.css'
+
 
 const Login = (props) => {
 

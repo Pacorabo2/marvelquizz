@@ -1,13 +1,16 @@
+// Functionals import
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+// Components import
+import ErrorPage from '../ErrorPage';
+import Footer from '../Footer';
+import ForgetPassword from '../ForgetPassword'
 import Header from '../Header';
 import Landing from '../Landing';
-import Footer from '../Footer';
-import Welcome from '../Welcome';
 import Login from '../Login';
 import SignUp from '../SignUp';
-import ErrorPage from '../ErrorPage';
-import ForgetPassword from '../ForgetPassword'
+import Welcome from '../Welcome';
+// Esthetics import
 import '../../App.css';
 import { IconContext } from 'react-icons'
 

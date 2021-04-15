@@ -1,4 +1,3 @@
-/* LOADER */
 .loader {
   border: 10px solid var(--light-grey-color);
   border-radius: 50%;
@@ -34,4 +33,3 @@
     transform: rotate(360deg);
   }
 }
-/* END LOADER */

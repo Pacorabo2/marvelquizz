@@ -1,5 +1,8 @@
+// Functionals import
 import React, { useEffect, useState } from 'react'
+// Esthetics import
 import Stepper from 'react-stepper-horizontal'
+import './levels.css'
 
 const Levels = ({quizLevel, levelNames}) => {
 

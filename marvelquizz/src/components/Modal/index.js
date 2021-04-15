@@ -1,4 +1,7 @@
+// Functionals import
 import React from 'react'
+// Esthetics import
+import './modal.css'
 
 const Modal = ({ showModal, children }) => {
   return (

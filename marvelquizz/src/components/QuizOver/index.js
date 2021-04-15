@@ -188,7 +188,7 @@ const QuizOver = React.forwardRef((props, ref) => {
         <h3>Titre 2</h3>
       </div>
       <div className="modalFooter">
-        <button className="modalBtn">Fermer</button>
+        <button className="modalBtn" onClick={hideModal}>Fermer</button>
       </div>
     </Fragment>
   )

@@ -185,7 +185,14 @@ const QuizOver = React.forwardRef((props, ref) => {
         <h2>{charactersInfo.data.results[0].name}</h2>
       </div>
       <div className="modalBody">
-        <h3>Titre 2</h3>
+        <div className="comicImage">
+          <img 
+            src={charactersInfo.data.results[0].thumbnail.path+'.'+charactersInfo.data.results[0].thumbnail.extension} 
+            alt={charactersInfo.data.results[0].name}
+          />
+        </div>
+        <div className="comicDetails">
+        </div>
       </div>
       <div className="modalFooter">
         <button className="modalBtn" onClick={hideModal}>Fermer</button>

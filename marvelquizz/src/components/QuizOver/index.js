@@ -26,7 +26,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   const [openModal, setOpenModal] = useState(false)
 
   // To define characters data
-  const [charactersInfo, setCharactersInfo] = useState([])
+  const [charactersInfos, setCharactersInfos] = useState([])
 
   // To define loading data
   const [loading, setLoading] = useState(true)
@@ -63,7 +63,7 @@ const QuizOver = React.forwardRef((props, ref) => {
     // To verify if data isn't in localStorage before do the API call
     if ( localStorage.getItem(id)) {
 
-      setCharactersInfo(JSON.parse(localStorage.getItem(id))) 
+      setCharactersInfos(JSON.parse(localStorage.getItem(id))) 
       setLoading(false)
 
     } else {
@@ -72,7 +72,7 @@ const QuizOver = React.forwardRef((props, ref) => {
         .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
         .then( response => {
           console.log(response.data);
-          setCharactersInfo(response.data)
+          setCharactersInfos(response.data)
           setLoading(false)
 
           // Push the response in local storage
@@ -182,25 +182,25 @@ const QuizOver = React.forwardRef((props, ref) => {
   (
     <Fragment>
       <div className="modalHeader">
-        <h2>{charactersInfo.data.results[0].name}</h2>
+        <h2>{charactersInfos.data.results[0].name}</h2>
       </div>
       <div className="modalBody">
         <div className="comicImage">
           <img 
-            src={charactersInfo.data.results[0].thumbnail.path+'.'+charactersInfo.data.results[0].thumbnail.extension} 
-            alt={charactersInfo.data.results[0].name}
+            src={charactersInfos.data.results[0].thumbnail.path+'.'+charactersInfos.data.results[0].thumbnail.extension} 
+            alt={charactersInfos.data.results[0].name}
           />
-        <p>{charactersInfo.attributionText}</p>
-        <h3>Descriptio</h3>
+        <p>{charactersInfos.attributionText}</p>
+        <h3>Description</h3>
         {
-          charactersInfo.data.results[0].description ? 
-          <p>{charactersInfo.data.results[0].description}</p>
+          charactersInfos.data.results[0].description ? 
+          <p>{charactersInfos.data.results[0].description}</p>
           : <p>Description indisponnible ...</p>
         }
         <h3>Plus d'infos</h3>
         {
-          charactersInfo.data.results[0].urls &&
-          charactersInfo.data.results[0].urls.map( (url, index) => {
+          charactersInfos.data.results[0].urls &&
+          charactersInfos.data.results[0].urls.map((url, index) => {
             return <a 
                 key={index} 
                 href={url.url} 

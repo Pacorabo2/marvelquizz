@@ -46,6 +46,10 @@ const QuizOver = React.forwardRef((props, ref) => {
     .then( response => {
       setCharactersInfo(response.data)
       setLoading(false)
+
+      // Push the response in local storage
+      localStorage.setItem(id, JSON.stringify(response.data))
+     
     })
     .catch( error => console.log(error) )
   }

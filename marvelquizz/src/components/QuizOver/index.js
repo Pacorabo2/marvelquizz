@@ -27,6 +27,9 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   // To define characters data
   const [charactersInfo, setCharactersInfo] = useState([])
+
+  // To define loading data
+  const [loading, setLoading] = useState(true)
   
   // To listen if changes on ref
   useEffect(()=> {
@@ -134,6 +137,33 @@ const QuizOver = React.forwardRef((props, ref) => {
       </td>
     </tr>
   )
+
+  const resultInModal = !loading ? 
+  (
+    <Fragment>
+      <div className="modalHeader">
+        <h2>{charactersInfo.data.results[0].name}</h2>
+      </div>
+      <div className="modalBody">
+        <h3>Titre 2</h3>
+      </div>
+      <div className="modalFooter">
+        <button className="modalBtn">Fermer</button>
+      </div>
+    </Fragment>
+  )
+  :
+  (
+    <Fragment>
+      <div className="modalHeader">
+        <h2>En attente de réponse de l'application Marvel</h2>
+      </div>
+      <div className="modalBody">
+        <Loader/>
+      </div>
+      
+    </Fragment>
+  )
   
   return (
     <Fragment>
@@ -157,15 +187,7 @@ const QuizOver = React.forwardRef((props, ref) => {
         </table>
       </div>
       <Modal showModal={openModal} hideModal={hideModal}>
-        <div className="modalHeader">
-          <h2>Titre</h2>
-        </div>
-        <div className="modalBody">
-          <h3>Titre 2</h3>
-        </div>
-        <div className="modalFooter">
-          <button className="modalBtn">Fermer</button>
-        </div>
+        {resultInModal}
       </Modal>
     </Fragment>
   )

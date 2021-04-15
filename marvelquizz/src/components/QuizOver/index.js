@@ -14,18 +14,19 @@ const QuizOver = React.forwardRef((props, ref) => {
 
   // Get API KEY 
   const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_KEY
-  console.log(API_PUBLIC_KEY);
+  
   // Define hash
   const hash = '5daddad6f060b32ee6ab13127f1df6bd'
-  console.log(hash);
-  console.log(`https://gateway.marvel.com/v1/public/characters/1009362?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`);
-  console.log(`${hash}`);
+  
 
   // To define an array with questions
   const [asked, setAsked] = useState([])
   
   // To define if modal is open or close
   const [openModal, setOpenModal] = useState(false)
+
+  // To define characters data
+  const [charactersInfo, setCharactersInfo] = useState([])
   
   // To listen if changes on ref
   useEffect(()=> {
@@ -38,8 +39,7 @@ const QuizOver = React.forwardRef((props, ref) => {
     setOpenModal(true)
     // Axios request on Marvel API
     axios
-    .get(`https://gateway.marvel.com/v1/public/characters/1009362?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
-    
+    .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
     .then( response => {
       console.log(response);
     })

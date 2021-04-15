@@ -178,7 +178,8 @@ const QuizOver = React.forwardRef((props, ref) => {
       <td colspan="3">
         <Loader 
           loadingMsg={"Passez ce niveau pour débloquer le niveau suivant. Recommençons!"}
-          styling={{textAlign: 'center', color: 'red'}}/>
+          styling={{textAlign: 'center', color: 'red'}}
+        />
       </td>
     </tr>
   )
@@ -195,7 +196,11 @@ const QuizOver = React.forwardRef((props, ref) => {
             src={charactersInfos.data.results[0].thumbnail.path+'.'+charactersInfos.data.results[0].thumbnail.extension} 
             alt={charactersInfos.data.results[0].name}
           />
-        <p>{charactersInfos.attributionText}</p>
+
+          <p>{charactersInfos.attributionText}</p>
+        </div>
+        <div className="comicDetails">
+
         <h3>Description</h3>
         {
           charactersInfos.data.results[0].description ? 
@@ -217,8 +222,6 @@ const QuizOver = React.forwardRef((props, ref) => {
           })
         }
         </div>
-        <div className="comicDetails">
-        </div>
       </div>
       <div className="modalFooter">
         <button className="modalBtn" onClick={hideModal}>Fermer</button>
@@ -234,10 +237,8 @@ const QuizOver = React.forwardRef((props, ref) => {
       <div className="modalBody">
         <Loader/>
       </div>
-      
     </Fragment>
   )
-  
   return (
     <Fragment>
       

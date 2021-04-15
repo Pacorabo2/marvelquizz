@@ -95,6 +95,11 @@ const QuizOver = React.forwardRef((props, ref) => {
     setLoading(true)
   }
 
+  // Get the first letter on Capital
+  const capitalizeFirstLetter = string => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   // to get average
   const averageGrade = maxQuestions / 2
 
@@ -207,7 +212,7 @@ const QuizOver = React.forwardRef((props, ref) => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 >
-                  {url.type}
+                  {capitalizeFirstLetter(url.type)}
                 </a>
           })
         }

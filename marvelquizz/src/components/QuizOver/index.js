@@ -35,12 +35,13 @@ console.log(API_PUBLIC_KEY);
     setOpenModal(true)
     // Axios request on Marvel API
     axios
-    .get()
+    .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash={hash}`)
     .then( response => {
       console.log(response);
     })
     .catch( error => console.log(error) )
   }
+
 
   // To close the Modal
   const hideModal = () => {

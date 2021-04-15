@@ -40,23 +40,34 @@ const QuizOver = React.forwardRef((props, ref) => {
   // To open the Modal
   const showModal = id => {
     setOpenModal(true)
-    // Axios request on Marvel API to get characters info
-    axios
-    .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
-    .then( response => {
-      setCharactersInfo(response.data)
+
+    // To verify if data isn't in localStorage before do the API call
+    if ( localStorage.getItem(id)) {
+
+      setCharactersInfo(JSON.parse(localStorage.getItem(id))) 
       setLoading(false)
 
-      // Push the response in local storage
-      localStorage.setItem(id, JSON.stringify(response.data))
-      // Push date in response
-      if ( !localStorage.getItem('marvelStorageDate')) {
-        localStorage.setItem('marvelStorageDate', Date.now())
+    } else {
+        // Axios request on Marvel API to get characters info
+        axios
+        .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
+        .then( response => {
+          console.log(response.data);
+          setCharactersInfo(response.data)
+          setLoading(false)
+
+          // Push the response in local storage
+          localStorage.setItem(id, JSON.stringify(response.data))
+          // Push date in response
+          if ( !localStorage.getItem('marvelStorageDate')) {
+            localStorage.setItem('marvelStorageDate', Date.now())
+          }
+          
+        })
+        .catch( error => console.log(error) )
       }
-      
-    })
-    .catch( error => console.log(error) )
-  }
+    }
+    
 
 
   // To close the Modal

@@ -191,6 +191,26 @@ const QuizOver = React.forwardRef((props, ref) => {
             alt={charactersInfo.data.results[0].name}
           />
         <p>{charactersInfo.attributionText}</p>
+        <h3>Descriptio</h3>
+        {
+          charactersInfo.data.results[0].description ? 
+          <p>{charactersInfo.data.results[0].description}</p>
+          : <p>Description indisponnible ...</p>
+        }
+        <h3>Plus d'infos</h3>
+        {
+          charactersInfo.data.results[0].urls &&
+          charactersInfo.data.results[0].urls.map( (url, index) => {
+            return <a 
+                key={index} 
+                href={url.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                >
+                  {url.type}
+                </a>
+          })
+        }
         </div>
         <div className="comicDetails">
         </div>

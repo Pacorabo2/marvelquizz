@@ -45,6 +45,7 @@ const QuizOver = React.forwardRef((props, ref) => {
     .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
     .then( response => {
       setCharactersInfo(response.data)
+      setLoading(false)
     })
     .catch( error => console.log(error) )
   }
@@ -53,6 +54,7 @@ const QuizOver = React.forwardRef((props, ref) => {
   // To close the Modal
   const hideModal = () => {
     setOpenModal(false)
+    setLoading(true)
   }
 
   // to get average

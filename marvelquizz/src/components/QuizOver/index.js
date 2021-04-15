@@ -37,11 +37,11 @@ const QuizOver = React.forwardRef((props, ref) => {
   // To open the Modal
   const showModal = id => {
     setOpenModal(true)
-    // Axios request on Marvel API
+    // Axios request on Marvel API to get characters info
     axios
     .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
     .then( response => {
-      console.log(response);
+      setCharactersInfo(response.data)
     })
     .catch( error => console.log(error) )
   }

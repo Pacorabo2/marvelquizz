@@ -35,7 +35,26 @@ const QuizOver = React.forwardRef((props, ref) => {
   useEffect(()=> {
     // To push in state ref.current to get questions and answers on array
     setAsked(ref.current)
+
+    // To call checkDataAge function if there is existing data
+    if (localStorage.getItem('marvelStorageDate')) {
+      const date = localStorage.getItem('marvelStorageDate')
+      checkDataAge(date)
+    }
   }, [ref])
+
+  // To verify if data > 15 days
+  const checkDataAge = date => {
+
+    const today = Date.now()
+    const timeDifference = today - date
+    const daysDifference = timeDifference / (1000 * 3600 * 24)
+
+    if ( daysDifference >= 15 ) {
+      localStorage.clear()
+      localStorage.setItem('marvelStorageDate', Date.now())
+    }
+  }
 
   // To open the Modal
   const showModal = id => {

@@ -1,5 +1,6 @@
 // Functionals import
 import React, { Fragment, useEffect, useState } from 'react'
+import axios from 'axios'
 // Components import
 import Loader from '../Loader'
 import Modal from '../Modal'
@@ -32,6 +33,13 @@ console.log(API_PUBLIC_KEY);
   // To open the Modal
   const showModal = id => {
     setOpenModal(true)
+    // Axios request on Marvel API
+    axios
+    .get()
+    .then( response => {
+      console.log(response);
+    })
+    .catch( error => console.log(error) )
   }
 
   // To close the Modal

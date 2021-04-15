@@ -49,7 +49,11 @@ const QuizOver = React.forwardRef((props, ref) => {
 
       // Push the response in local storage
       localStorage.setItem(id, JSON.stringify(response.data))
-     
+      // Push date in response
+      if ( !localStorage.getItem('marvelStorageDate')) {
+        localStorage.setItem('marvelStorageDate', Date.now())
+      }
+      
     })
     .catch( error => console.log(error) )
   }

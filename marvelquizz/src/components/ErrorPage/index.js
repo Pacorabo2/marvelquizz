@@ -1,7 +1,7 @@
 // Functionals import
 import React from 'react';
 // Components import
-import Deadpool from '../../images/404orange.png'
+import Deadpool from '../../images/404.png'
 // Esthetics import
 import './errorPage.css'
 

@@ -11,7 +11,7 @@ import Login from '../Login';
 import SignUp from '../SignUp';
 import Welcome from '../Welcome';
 // Esthetics import
-import '../../App.css';
+import '../../assets/App.css';
 import { IconContext } from 'react-icons'
 
 

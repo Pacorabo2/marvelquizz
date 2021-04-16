@@ -13,7 +13,7 @@
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(../../images/deadpoolbravo.png);
+  background-image: url(../../assets/images/deadpoolbravo.png);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -26,7 +26,7 @@
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(../../images/deadpoolperdu.png);
+  background-image: url(../../assets/images/deadpoolperdu.png);
   background-repeat: no-repeat;
   background-position: center center;
 }

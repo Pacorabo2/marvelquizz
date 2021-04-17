@@ -19,7 +19,7 @@ const Landing = () => {
       // remove className tohide  claws
       refWolverine.current.classList.remove('startingImg')
       setBtn(true)
-    }, 1000)
+    }, 500)
   }, [])
 
   // Show left claws on MouseOver left Div

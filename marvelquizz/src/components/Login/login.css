@@ -1,5 +1,5 @@
 .signUpLoginBox {
-  background-image: url(../../images/Fond_matiere_BODY.png);
+  background-image: url(../../assets/images/Fond_matiere_BODY.png);
   background-repeat: repeat;
   -webkit-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
@@ -15,7 +15,7 @@
 
 .formBoxLeftSignup {
   min-height: 500px;
-  background-image: url(../../images/ironmanshot.png);
+  background-image: url(../../assets/images/ironmanshot.png);
   background-repeat: no-repeat;
   /* background-position: center center; */
   flex: 0 1 50%;
@@ -23,7 +23,7 @@
 
 .formBoxLeftLogin {
   min-height: 500px;
-  background-image: url(../../images/daredevil.png);
+  background-image: url(../../assets/images/daredevil.png);
   background-repeat: no-repeat;
   background-position: center center;
   flex: 0 1 50%;
@@ -31,7 +31,7 @@
 
 .formBoxLeftForget {
   min-height: 500px;
-  background-image: url(../../images/deadpoolforget.png);
+  background-image: url(../../assets/images/deadpoolforget.png);
   background-repeat: no-repeat;
   background-position: center center;
   flex: 0 1 50%;
@@ -79,7 +79,6 @@
   padding: 10px 0;
   font-size: 17px;
   color: var(--red-color);
-  text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 30px;
   border: none;

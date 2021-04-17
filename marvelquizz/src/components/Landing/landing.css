@@ -1,7 +1,7 @@
 .welcomePage {
   background-color: var(--red-color);
   background-blend-mode: multiply;
-  background-image: url(../../images/wolverine-no-claws.png);
+  background-image: url(../../assets/images/wolverine-no-claws.png);
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
@@ -10,15 +10,15 @@
 }
 
 .startingImg {
-  background-image: url(../../images/wolverine.png);
+  background-image: url(../../assets/images/wolverine.png);
 }
 
 .leftClaws {
-background-image: url(../../images/wolverine-left-claw.png);
+background-image: url(../../assets/images/wolverine-left-claw.png);
 }
 
 .rightClaws {
-background-image: url(../../images/wolverine-right-claw.png);
+background-image: url(../../assets/images/wolverine-right-claw.png);
 }  
 
 .leftBox {

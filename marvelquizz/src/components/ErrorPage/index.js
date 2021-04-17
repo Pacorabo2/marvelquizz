@@ -8,9 +8,7 @@ import './errorPage.css'
 const ErrorPage = () => {
   return (
     <div className="signUpLoginBox">
-      <div className="container">
         <img src={ Deadpool } alt="error Page"/>
-      </div>
     </div>
   )
 }

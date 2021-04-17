@@ -1,8 +1,10 @@
+// Functionals import
 import React, { useState, useContext } from 'react'
-// Import context
 import { FirebaseContext } from '../Firebase'
-// import Link
 import { Link } from 'react-router-dom'
+// Esthetics import
+
+
 
 const SignUp = (props) => {
 

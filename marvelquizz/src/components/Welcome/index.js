@@ -1,8 +1,13 @@
+// Functionals import
 import React, { useState, useContext, useEffect } from 'react'
 import { FirebaseContext } from '../Firebase'
+// Components import
 import Logout from '../Logout'
 import Quiz from '../Quiz'
 import Loader from '../Loader'
+// Esthetics import
+import './welcome.css'
+
 
 const Welcome = props => {
 

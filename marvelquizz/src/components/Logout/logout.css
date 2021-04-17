@@ -1,7 +1,7 @@
 .logoutContainer {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .switch {

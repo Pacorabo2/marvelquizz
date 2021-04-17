@@ -1,8 +1,8 @@
 .levelsContainer {
   display: flex;
   background: transparent;
-  padding: 20px;
-  margin-bottom: 40px;
+  padding: 5px 20px;
+  margin-bottom: 15px;
 }
 
 .headingLevels {
